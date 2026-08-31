@@ -26,7 +26,7 @@ uc = d.add(
             elm.IcPin(name='ADC', pin='3', side='right'),
         ],
         size=(4.5, 4.5),
-        pinspacing=1.4, # ピン間隔を少し広げて文字の干渉を防ぐ
+        pinspacing=1.4,
     ).label('ATTINY402', 'center', fontsize=12)
 )
 
@@ -37,7 +37,7 @@ uc = d.add(
 d.add(elm.Line().up().at(uc.VDD).length(1.2))
 d.add(elm.Dot())
 
-# パスコン (0.1uF) - マイコンの右側に大きく張り出して被りを防止
+# パスコン (0.1uF)
 d.push()
 d.add(elm.Line().right().length(3.0))
 d.add(elm.Capacitor().down().label('0.1uF\n(104)', 'right', ofst=0.2))
@@ -56,15 +56,14 @@ d.add(elm.Ground())
 # --------------------------------------------------
 d.add(elm.Dot().at(uc.UPDI))
 
-# VCCプルアップ抵抗（ラベルを左側に配置してVCC記号との重なりを防止）
+# VCCプルアップ抵抗（SNAP必須）
 d.push()
 d.add(elm.Resistor().up().label('4.7k', 'left', ofst=0.2))
 d.add(elm.Vdd().label('VCC', 'top'))
 d.pop()
 
-# SNAP保護抵抗
-d.add(elm.Resistor().left().label('470', 'top'))
-d.add(elm.Line().left().length(1.2).label('SNAP Pin 4\n(UPDI)', 'left'))
+# SNAPへの直接接続（直列保護抵抗なし）
+d.add(elm.Line().left().length(2.5).label('SNAP Pin 4\n(UPDI)', 'left'))
 
 # --------------------------------------------------
 # 4. 発光回路（物理5ピン PWM/PA2 ＋ LED ＋ 制限抵抗）
@@ -77,7 +76,6 @@ d.add(elm.Ground())
 # --------------------------------------------------
 # 5. 受光回路（フォトトランジスタ ＋ プルアップ抵抗）
 # --------------------------------------------------
-# 横幅をしっかり 7.0 単位まで取って LED や 100k の重なりを完全に分離
 d.add(elm.Line().right().at(uc.ADC).length(7.0))
 d.add(elm.Dot())
 
