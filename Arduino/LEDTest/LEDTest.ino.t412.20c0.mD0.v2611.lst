@@ -1,0 +1,756 @@
+
+C:\Users\takas\AppData\Local\arduino\sketches\A9FC0C02C6BC09A5C3C0792C0DF7682D/LEDTest.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+__vectors():
+../../../../../crt1/gcrt1.S:63
+   0:	19 c0       	rjmp	.+50     	; 0x34 <__ctors_end>
+../../../../../crt1/gcrt1.S:67
+   2:	34 c0       	rjmp	.+104    	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:68
+   4:	33 c0       	rjmp	.+102    	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:69
+   6:	32 c0       	rjmp	.+100    	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:70
+   8:	31 c0       	rjmp	.+98     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:71
+   a:	30 c0       	rjmp	.+96     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:72
+   c:	2f c0       	rjmp	.+94     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:73
+   e:	2e c0       	rjmp	.+92     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:74
+  10:	2d c0       	rjmp	.+90     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:75
+  12:	2c c0       	rjmp	.+88     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:76
+  14:	2b c0       	rjmp	.+86     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:77
+  16:	2a c0       	rjmp	.+84     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:78
+  18:	29 c0       	rjmp	.+82     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:79
+  1a:	28 c0       	rjmp	.+80     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:80
+  1c:	9a c0       	rjmp	.+308    	; 0x152 <__vector_14>
+../../../../../crt1/gcrt1.S:81
+  1e:	26 c0       	rjmp	.+76     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:82
+  20:	25 c0       	rjmp	.+74     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:83
+  22:	24 c0       	rjmp	.+72     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:84
+  24:	23 c0       	rjmp	.+70     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:85
+  26:	22 c0       	rjmp	.+68     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:86
+  28:	21 c0       	rjmp	.+66     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:87
+  2a:	20 c0       	rjmp	.+64     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:88
+  2c:	1f c0       	rjmp	.+62     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:89
+  2e:	1e c0       	rjmp	.+60     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:90
+  30:	1d c0       	rjmp	.+58     	; 0x6c <__bad_interrupt>
+../../../../../crt1/gcrt1.S:91
+  32:	1c c0       	rjmp	.+56     	; 0x6c <__bad_interrupt>
+
+00000034 <__ctors_end>:
+__trampolines_start():
+../../../../../crt1/gcrt1.S:230
+  34:	11 24       	eor	r1, r1
+../../../../../crt1/gcrt1.S:231
+  36:	1f be       	out	0x3f, r1	; 63
+../../../../../crt1/gcrt1.S:232
+  38:	cf ef       	ldi	r28, 0xFF	; 255
+../../../../../crt1/gcrt1.S:234
+  3a:	cd bf       	out	0x3d, r28	; 61
+../../../../../crt1/gcrt1.S:236
+  3c:	df e3       	ldi	r29, 0x3F	; 63
+../../../../../crt1/gcrt1.S:237
+  3e:	de bf       	out	0x3e, r29	; 62
+
+00000040 <_initThreeStuff()>:
+_Z15_initThreeStuffv():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:104
+
+  /* Minimum: Reset if we wound up here through malfunction - this relies on user clearing the  *
+   * register on startup, which is rarely done in Arduino land.                                 */
+  void __attribute__((weak)) init_reset_flags() ;
+  void __attribute__((weak)) init_reset_flags() {
+    uint8_t flags = RSTCTRL.RSTFR;
+  40:	80 91 40 00 	lds	r24, 0x0040	; 0x800040 <digital_pin_to_bit_mask+0x7f7dec>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:105
+    RSTCTRL.RSTFR = flags;
+  44:	80 93 40 00 	sts	0x0040, r24	; 0x800040 <digital_pin_to_bit_mask+0x7f7dec>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:106
+    if (flags == 0) {
+  48:	81 11       	cpse	r24, r1
+  4a:	05 c0       	rjmp	.+10     	; 0x56 <_initThreeStuff()+0x16>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:107
+      _PROTECTED_WRITE(RSTCTRL.SWRR, 1);
+  4c:	98 ed       	ldi	r25, 0xD8	; 216
+  4e:	21 e0       	ldi	r18, 0x01	; 1
+  50:	94 bf       	out	0x34, r25	; 52
+  52:	20 93 41 00 	sts	0x0041, r18	; 0x800041 <digital_pin_to_bit_mask+0x7f7ded>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:109
+    }
+    GPIOR0 = flags;
+  56:	8c bb       	out	0x1c, r24	; 28
+
+00000058 <__do_clear_bss>:
+__do_clear_bss():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
+  58:	2f e3       	ldi	r18, 0x3F	; 63
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2442
+  5a:	a0 e0       	ldi	r26, 0x00	; 0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2443
+  5c:	bf e3       	ldi	r27, 0x3F	; 63
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2444
+  5e:	01 c0       	rjmp	.+2      	; 0x62 <.do_clear_bss_start>
+
+00000060 <.do_clear_bss_loop>:
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
+  60:	1d 92       	st	X+, r1
+
+00000062 <.do_clear_bss_start>:
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
+  62:	aa 30       	cpi	r26, 0x0A	; 10
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2449
+  64:	b2 07       	cpc	r27, r18
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2450
+  66:	e1 f7       	brne	.-8      	; 0x60 <.do_clear_bss_loop>
+.do_clear_bss_start():
+../../../../../crt1/gcrt1.S:314
+  68:	a3 d0       	rcall	.+326    	; 0x1b0 <main>
+../../../../../crt1/gcrt1.S:315
+  6a:	e9 c0       	rjmp	.+466    	; 0x23e <_exit>
+
+0000006c <__bad_interrupt>:
+__vector_22():
+../../../../../crt1/gcrt1.S:209
+  6c:	c9 cf       	rjmp	.-110    	; 0x0 <__vectors>
+
+0000006e <delay.part.0.constprop.1>:
+delay.part.0.constprop.1():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:167
+  unsigned long millis() {
+    // return timer_overflow_count; // for debugging timekeeping issues where these variables are out of scope from the sketch
+    unsigned long m;
+    // disable interrupts while we read timer_millis or we might get an
+    // inconsistent value (e.g. in the middle of a write to timer_millis)
+    uint8_t oldSREG = SREG;
+  6e:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:168
+    cli();
+  70:	f8 94       	cli
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:182
+        if (!(rtccount & 0x8000)) m += 64000;
+      }
+      SREG = oldSREG;
+      m += rtccount - (rtccount >> 5) + (rtccount >> 7);
+    #else
+      m = timingStruct.timer_millis;
+  72:	40 91 04 3f 	lds	r20, 0x3F04	; 0x803f04 <__DATA_REGION_ORIGIN__+0x4>
+  76:	50 91 05 3f 	lds	r21, 0x3F05	; 0x803f05 <__DATA_REGION_ORIGIN__+0x5>
+  7a:	60 91 06 3f 	lds	r22, 0x3F06	; 0x803f06 <__DATA_REGION_ORIGIN__+0x6>
+  7e:	70 91 07 3f 	lds	r23, 0x3F07	; 0x803f07 <__DATA_REGION_ORIGIN__+0x7>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:183
+      SREG = oldSREG;
+  82:	8f bf       	out	0x3f, r24	; 63
+millis():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:167
+  unsigned long millis() {
+    // return timer_overflow_count; // for debugging timekeeping issues where these variables are out of scope from the sketch
+    unsigned long m;
+    // disable interrupts while we read timer_millis or we might get an
+    // inconsistent value (e.g. in the middle of a write to timer_millis)
+    uint8_t oldSREG = SREG;
+  84:	2f b7       	in	r18, 0x3f	; 63
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:168
+    cli();
+  86:	f8 94       	cli
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:182
+        if (!(rtccount & 0x8000)) m += 64000;
+      }
+      SREG = oldSREG;
+      m += rtccount - (rtccount >> 5) + (rtccount >> 7);
+    #else
+      m = timingStruct.timer_millis;
+  88:	80 91 04 3f 	lds	r24, 0x3F04	; 0x803f04 <__DATA_REGION_ORIGIN__+0x4>
+  8c:	90 91 05 3f 	lds	r25, 0x3F05	; 0x803f05 <__DATA_REGION_ORIGIN__+0x5>
+  90:	a0 91 06 3f 	lds	r26, 0x3F06	; 0x803f06 <__DATA_REGION_ORIGIN__+0x6>
+  94:	b0 91 07 3f 	lds	r27, 0x3F07	; 0x803f07 <__DATA_REGION_ORIGIN__+0x7>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:183
+      SREG = oldSREG;
+  98:	2f bf       	out	0x3f, r18	; 63
+delay.part.0.constprop.1():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:252
+      while(ms--) {
+        _delay_ms(1);
+      }
+    } else {
+      uint32_t start = millis();
+      while (millis() - start < ms);
+  9a:	84 1b       	sub	r24, r20
+  9c:	95 0b       	sbc	r25, r21
+  9e:	a6 0b       	sbc	r26, r22
+  a0:	b7 0b       	sbc	r27, r23
+  a2:	84 3f       	cpi	r24, 0xF4	; 244
+  a4:	91 40       	sbci	r25, 0x01	; 1
+  a6:	a1 05       	cpc	r26, r1
+  a8:	b1 05       	cpc	r27, r1
+  aa:	60 f3       	brcs	.-40     	; 0x84 <__EEPROM_REGION_LENGTH__+0x4>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:254
+    }
+  }
+  ac:	08 95       	ret
+
+000000ae <digitalWrite>:
+digitalWrite():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:241
+    default:
+      break;
+  }
+}
+
+void digitalWrite(uint8_t pin, uint8_t val) {
+  ae:	cf 93       	push	r28
+  b0:	df 93       	push	r29
+check_valid_digital_pin():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/Arduino.h:888
+#if !defined(NUM_TOTAL_PINS)
+  #define NUM_TOTAL_PINS                (NUM_DIGITAL_PINS) /* Used the same way as NUM_DIGITAL_PINS. so it doesn't mean what it's named  - I didn't make the convention*/
+#endif
+
+inline __attribute__((always_inline)) void check_valid_digital_pin(pin_size_t pin) {
+  if (__builtin_constant_p(pin)) {
+  b2:	28 2f       	mov	r18, r24
+  b4:	30 e0       	ldi	r19, 0x00	; 0
+digitalWrite():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:244
+  check_valid_digital_pin(pin);
+  /* Get bit mask for pin */
+  uint8_t bit_mask = digitalPinToBitMask(pin);
+  b6:	d9 01       	movw	r26, r18
+  b8:	ac 5a       	subi	r26, 0xAC	; 172
+  ba:	bd 47       	sbci	r27, 0x7D	; 125
+  bc:	8c 91       	ld	r24, X
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:245
+  if (bit_mask == NOT_A_PIN) {
+  be:	8f 3f       	cpi	r24, 0xFF	; 255
+  c0:	61 f1       	breq	.+88     	; 0x11a <__DATA_REGION_LENGTH__+0x1a>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:250
+    return;
+  }
+
+  /* Get port */
+  PORT_t *port = digitalPinToPortStruct(pin);
+  c2:	f9 01       	movw	r30, r18
+  c4:	e2 5b       	subi	r30, 0xB2	; 178
+  c6:	fd 47       	sbci	r31, 0x7D	; 125
+  c8:	e0 81       	ld	r30, Z
+  ca:	90 e2       	ldi	r25, 0x20	; 32
+  cc:	e9 9f       	mul	r30, r25
+  ce:	f0 01       	movw	r30, r0
+  d0:	11 24       	eor	r1, r1
+  d2:	fc 5f       	subi	r31, 0xFC	; 252
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:255
+  /* Set output to value
+  This runs regardless of whether the pin is an output,
+  allowing the pin to be staged with
+  changed to an output. Code in the wild relies on this behavior. */
+  if (val == LOW) { /* If LOW */
+  d4:	61 11       	cpse	r22, r1
+  d6:	24 c0       	rjmp	.+72     	; 0x120 <__DATA_REGION_LENGTH__+0x20>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:256
+    port->OUTCLR = bit_mask;
+  d8:	86 83       	std	Z+6, r24	; 0x06
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:280
+  } else {
+    port->OUTSET = bit_mask;
+  }
+
+  /* Input direction */
+  if (!(port->DIR & bit_mask)) {
+  da:	90 81       	ld	r25, Z
+  dc:	89 23       	and	r24, r25
+  de:	99 f4       	brne	.+38     	; 0x106 <__DATA_REGION_LENGTH__+0x6>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:282
+    /* Get bit position for getting pin ctrl reg */
+    uint8_t bit_pos = digitalPinToBitPosition(pin);
+  e0:	e9 01       	movw	r28, r18
+  e2:	c8 5b       	subi	r28, 0xB8	; 184
+  e4:	dd 47       	sbci	r29, 0x7D	; 125
+  e6:	98 81       	ld	r25, Y
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:284
+    /* Calculate where pin control register is */
+    volatile uint8_t *pin_ctrl_reg = getPINnCTRLregister(port, bit_pos);
+  e8:	30 97       	sbiw	r30, 0x00	; 0
+  ea:	e1 f0       	breq	.+56     	; 0x124 <__DATA_REGION_LENGTH__+0x24>
+  ec:	98 30       	cpi	r25, 0x08	; 8
+  ee:	d0 f4       	brcc	.+52     	; 0x124 <__DATA_REGION_LENGTH__+0x24>
+  f0:	70 96       	adiw	r30, 0x10	; 16
+  f2:	e9 0f       	add	r30, r25
+  f4:	f1 1d       	adc	r31, r1
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:287
+
+    /* Save system status and disable interrupts */
+    uint8_t status = SREG;
+  f6:	9f b7       	in	r25, 0x3f	; 63
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:288
+    cli();
+  f8:	f8 94       	cli
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:292
+
+    if (val == LOW) {
+      /* Disable pullup */
+      *pin_ctrl_reg &= ~PORT_PULLUPEN_bm;
+  fa:	80 81       	ld	r24, Z
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:290
+
+    /* Save system status and disable interrupts */
+    uint8_t status = SREG;
+    cli();
+
+    if (val == LOW) {
+  fc:	61 11       	cpse	r22, r1
+  fe:	15 c0       	rjmp	.+42     	; 0x12a <__DATA_REGION_LENGTH__+0x2a>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:292
+      /* Disable pullup */
+      *pin_ctrl_reg &= ~PORT_PULLUPEN_bm;
+ 100:	87 7f       	andi	r24, 0xF7	; 247
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:295
+    } else {
+      /* Enable pull-up */
+      *pin_ctrl_reg |= PORT_PULLUPEN_bm;
+ 102:	80 83       	st	Z, r24
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:299
+    }
+
+    /* Restore system status */
+    SREG = status;
+ 104:	9f bf       	out	0x3f, r25	; 63
+turnOffPWM():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:107
+   * any timers with minimum overhead - critical on these parts
+   * Since nothing that will show up here can have more than one
+   * one bit set, binary and will give 0x00 if that bit is cleared
+   * which is NOT_ON_TIMER.
+   */
+  uint8_t digital_pin_timer =  digitalPinToTimer(pin) & __PeripheralControl;
+ 106:	2e 5b       	subi	r18, 0xBE	; 190
+ 108:	3d 47       	sbci	r19, 0x7D	; 125
+ 10a:	f9 01       	movw	r30, r18
+ 10c:	80 81       	ld	r24, Z
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:109
+  /* end megaTinyCore-specific section */
+  if (digital_pin_timer== NOT_ON_TIMER) {
+ 10e:	88 23       	and	r24, r24
+ 110:	21 f0       	breq	.+8      	; 0x11a <__DATA_REGION_LENGTH__+0x1a>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:116
+  }
+
+  uint8_t bit_mask = digitalPinToBitMask(pin);
+  // TCB_t *timerB;
+
+  switch (digital_pin_timer) {
+ 112:	80 31       	cpi	r24, 0x10	; 16
+ 114:	61 f0       	breq	.+24     	; 0x12e <__DATA_REGION_LENGTH__+0x2e>
+ 116:	88 3f       	cpi	r24, 0xF8	; 248
+ 118:	c9 f0       	breq	.+50     	; 0x14c <__DATA_REGION_LENGTH__+0x4c>
+digitalWrite():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:312
+   * analogWritten() 255, then digitallyWritten() to HIGH, which
+   * would turn it off for the time between turnOffPWM() and
+   * PORT->OUTCLR)
+   * Since there's no penalty, why make a glitch we don't have to? */
+  turnOffPWM(pin);
+}
+ 11a:	df 91       	pop	r29
+ 11c:	cf 91       	pop	r28
+ 11e:	08 95       	ret
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:276
+    // val will now be 0 (LOW) if the toggling made it LOW
+    // or bit_mask if not. And further down, we only need to
+    // know if it's
+  /* If HIGH OR  > TOGGLE  */
+  } else {
+    port->OUTSET = bit_mask;
+ 120:	85 83       	std	Z+5, r24	; 0x05
+ 122:	db cf       	rjmp	.-74     	; 0xda <digitalWrite+0x2c>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:284
+  /* Input direction */
+  if (!(port->DIR & bit_mask)) {
+    /* Get bit position for getting pin ctrl reg */
+    uint8_t bit_pos = digitalPinToBitPosition(pin);
+    /* Calculate where pin control register is */
+    volatile uint8_t *pin_ctrl_reg = getPINnCTRLregister(port, bit_pos);
+ 124:	f0 e0       	ldi	r31, 0x00	; 0
+ 126:	e0 e0       	ldi	r30, 0x00	; 0
+ 128:	e6 cf       	rjmp	.-52     	; 0xf6 <digitalWrite+0x48>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:295
+    if (val == LOW) {
+      /* Disable pullup */
+      *pin_ctrl_reg &= ~PORT_PULLUPEN_bm;
+    } else {
+      /* Enable pull-up */
+      *pin_ctrl_reg |= PORT_PULLUPEN_bm;
+ 12a:	88 60       	ori	r24, 0x08	; 8
+ 12c:	ea cf       	rjmp	.-44     	; 0x102 <__DATA_REGION_LENGTH__+0x2>
+turnOffPWM():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:113
+  /* end megaTinyCore-specific section */
+  if (digital_pin_timer== NOT_ON_TIMER) {
+    return;
+  }
+
+  uint8_t bit_mask = digitalPinToBitMask(pin);
+ 12e:	8c 91       	ld	r24, X
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:125
+    {
+      #if !defined(TCA_BUFFERED_3PIN)
+        // uint8_t *timer_cmp_out;
+        /* Bit position will give output channel */
+        #ifdef __AVR_ATtinyxy2__ //8 pin parts
+          if (bit_mask == 0x80) {
+ 130:	80 38       	cpi	r24, 0x80	; 128
+ 132:	51 f0       	breq	.+20     	; 0x148 <__DATA_REGION_LENGTH__+0x48>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:128
+            bit_mask = 1;         // on the xy2, WO0 is on PA7
+          }
+          if (bit_mask > 0x04) {  // -> bit_pos > 2 -> output channel controlled by HCMP
+ 134:	85 30       	cpi	r24, 0x05	; 5
+ 136:	08 f0       	brcs	.+2      	; 0x13a <__DATA_REGION_LENGTH__+0x3a>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:129
+            bit_mask <<= 1;       // mind the gap (between LCMP and HCMP)
+ 138:	88 0f       	add	r24, r24
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:142
+          } else {
+            // Otherwise, it's WO3-5. These will always be on 0b00hhh000,. Here since we ARE working with a high half timer, we need to just leftshift it once.
+            bit_mask <<= 1;
+          }
+        #endif // End if 8 vs normal parts
+        TCA0.SPLIT.CTRLB &= ~bit_mask;
+ 13a:	90 91 01 0a 	lds	r25, 0x0A01	; 0x800a01 <digital_pin_to_bit_mask+0x7f87ad>
+ 13e:	80 95       	com	r24
+ 140:	89 23       	and	r24, r25
+ 142:	80 93 01 0a 	sts	0x0A01, r24	; 0x800a01 <digital_pin_to_bit_mask+0x7f87ad>
+ 146:	e9 cf       	rjmp	.-46     	; 0x11a <__DATA_REGION_LENGTH__+0x1a>
+digitalWrite():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:126
+      #if !defined(TCA_BUFFERED_3PIN)
+        // uint8_t *timer_cmp_out;
+        /* Bit position will give output channel */
+        #ifdef __AVR_ATtinyxy2__ //8 pin parts
+          if (bit_mask == 0x80) {
+            bit_mask = 1;         // on the xy2, WO0 is on PA7
+ 148:	81 e0       	ldi	r24, 0x01	; 1
+ 14a:	f7 cf       	rjmp	.-18     	; 0x13a <__DATA_REGION_LENGTH__+0x3a>
+turnOffPWM():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:161
+    /* We don't need the type b timers as this core does not use them for PWM      */
+
+    // 1-series parts have a DAC that we can use...
+    #if defined(DAC0)
+      case DACOUT:
+        DAC0.CTRLA = 0x00;
+ 14c:	10 92 80 06 	sts	0x0680, r1	; 0x800680 <digital_pin_to_bit_mask+0x7f842c>
+ 150:	e4 cf       	rjmp	.-56     	; 0x11a <__DATA_REGION_LENGTH__+0x1a>
+
+00000152 <__vector_14>:
+__vector_14():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_micros_ISR.h:839
+  #else
+    ISR(MILLIS_TIMER_VECTOR, ISR_NAKED) {
+      // Common Interrupt header for TCB, TCA and TCD;
+      // Clears the Timer Interrupt flag and pushes the CPU Registers
+      // 7 words / 7 clocks
+      __asm__ __volatile__(
+ 152:	8f 93       	push	r24
+ 154:	81 e0       	ldi	r24, 0x01	; 1
+ 156:	80 93 8d 0a 	sts	0x0A8D, r24	; 0x800a8d <digital_pin_to_bit_mask+0x7f8839>
+ 15a:	8f b7       	in	r24, 0x3f	; 63
+ 15c:	8f 93       	push	r24
+ 15e:	ef 93       	push	r30
+ 160:	ff 93       	push	r31
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_micros_ISR.h:950
+        [MIINC]  "M" ((0x0000 - MILLIS_INC) & 0xFF),
+        [MINCD]  "M" ((0xFFFF - MILLIS_INC) & 0xFF)
+      );
+  */
+
+      __asm__ __volatile__(
+ 162:	e0 e0       	ldi	r30, 0x00	; 0
+ 164:	ff e3       	ldi	r31, 0x3F	; 63
+ 166:	9f 93       	push	r25
+ 168:	68 94       	set
+ 16a:	8f ef       	ldi	r24, 0xFF	; 255
+ 16c:	0d c0       	rjmp	.+26     	; 0x188 <sub4>
+
+0000016e <ovf_end>:
+ 16e:	e8 94       	clt
+ 170:	84 81       	ldd	r24, Z+4	; 0x04
+ 172:	95 81       	ldd	r25, Z+5	; 0x05
+ 174:	80 5d       	subi	r24, 0xD0	; 208
+ 176:	9c 4f       	sbci	r25, 0xFC	; 252
+ 178:	84 83       	std	Z+4, r24	; 0x04
+ 17a:	95 83       	std	Z+5, r25	; 0x05
+ 17c:	88 5e       	subi	r24, 0xE8	; 232
+ 17e:	93 40       	sbci	r25, 0x03	; 3
+ 180:	80 f0       	brcs	.+32     	; 0x1a2 <sub_end>
+ 182:	84 83       	std	Z+4, r24	; 0x04
+ 184:	95 83       	std	Z+5, r25	; 0x05
+ 186:	8f ef       	ldi	r24, 0xFF	; 255
+
+00000188 <sub4>:
+ 188:	90 81       	ld	r25, Z
+ 18a:	98 1b       	sub	r25, r24
+ 18c:	91 93       	st	Z+, r25
+ 18e:	90 81       	ld	r25, Z
+ 190:	9f 4f       	sbci	r25, 0xFF	; 255
+ 192:	91 93       	st	Z+, r25
+ 194:	90 81       	ld	r25, Z
+ 196:	9f 4f       	sbci	r25, 0xFF	; 255
+ 198:	91 93       	st	Z+, r25
+ 19a:	90 81       	ld	r25, Z
+ 19c:	9f 4f       	sbci	r25, 0xFF	; 255
+ 19e:	91 93       	st	Z+, r25
+ 1a0:	36 f3       	brts	.-52     	; 0x16e <ovf_end>
+
+000001a2 <sub_end>:
+ 1a2:	9f 91       	pop	r25
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_micros_ISR.h:1012
+        [MINCD]  "M" ((0xFFFF - MILLIS_INC) & 0xFF)
+      );
+    #endif /* (defined(MILLIS_USE_TIMERB0) || defined(MILLIS_USE_TIMERB1) || defined(MILLIS_USE_TIMERB2) || defined(MILLIS_USE_TIMERB3) || defined(MILLIS_USE_TIMERB4)) */
+    // Common ISR Epilogue for TCA, TCB and TCD, popping register in reverse Order
+    // 6 words, 14 clocks
+    __asm__ __volatile__(
+ 1a4:	ff 91       	pop	r31
+ 1a6:	ef 91       	pop	r30
+ 1a8:	8f 91       	pop	r24
+ 1aa:	8f bf       	out	0x3f, r24	; 63
+ 1ac:	8f 91       	pop	r24
+ 1ae:	18 95       	reti
+
+000001b0 <main>:
+main():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:460
+  #if (CLOCK_SOURCE == 0)
+    #if (defined(CLOCK_TUNE_INTERNAL))
+      tune_internal(); // Will be inlined as only called once. Just too long and ugly to put two implementations in middle of this.
+    #else
+      #if defined(_MCLK_CTRLB) && defined(F_CPU) && defined(_MAIN_CLOCK_PRESCALER)
+        _PROTECTED_WRITE(CLKCTRL_MCLKCTRLB,_MCLK_CTRLB);
+ 1b0:	88 ed       	ldi	r24, 0xD8	; 216
+ 1b2:	90 e0       	ldi	r25, 0x00	; 0
+ 1b4:	84 bf       	out	0x34, r24	; 52
+ 1b6:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <digital_pin_to_bit_mask+0x7f7e0d>
+init_ADC0():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:552
+
+
+/********************************* ADC ****************************************/
+void __attribute__((weak)) init_ADC0() {
+  ADC_t* pADC;
+  _fastPtr_d(pADC, &ADC0);
+ 1ba:	e0 e0       	ldi	r30, 0x00	; 0
+ 1bc:	f6 e0       	ldi	r31, 0x06	; 6
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:573
+   **************************************************************************/
+    //                              30 MHz / 32 = 937 kHz,  32 MHz / 32 =  1 MHz.
+    #if   F_CPU   > 24000000     // 24 MHz / 16 = 1.5 MHz,  25 MHz / 32 =  780 kHz
+      pADC->CTRLC  = ADC_PRESC_DIV32_gc | ADC_REFSEL_VDDREF_gc | ADC_SAMPCAP_bm;
+    #elif F_CPU  >= 12000000    // 16 MHz / 16 = 1.0 MHz,  20 MHz / 16 = 1.25 MHz
+      pADC->CTRLC  = ADC_PRESC_DIV16_gc | ADC_REFSEL_VDDREF_gc | ADC_SAMPCAP_bm;
+ 1be:	83 e5       	ldi	r24, 0x53	; 83
+ 1c0:	82 83       	std	Z+2, r24	; 0x02
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:584
+      pADC->CTRLC  =  ADC_PRESC_DIV2_gc | ADC_REFSEL_VDDREF_gc | ADC_SAMPCAP_bm;
+    #endif
+    #if   (F_CPU == 6000000 || F_CPU == 12000000 || F_CPU == 24000000 || F_CPU ==25000000)
+      pADC->SAMPCTRL = (7); // 9 ADC clocks, 12 us
+    #elif (F_CPU == 5000000 || F_CPU == 10000000 || F_CPU == 20000000)
+      pADC->SAMPCTRL = (13);   // 15 ADC clock,s 12 us
+ 1c2:	8d e0       	ldi	r24, 0x0D	; 13
+ 1c4:	85 83       	std	Z+5, r24	; 0x05
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:588
+    #else
+      pADC->SAMPCTRL = (10); // 12 ADC clocks, 12 us
+    #endif
+    pADC->CTRLD    = ADC_INITDLY_DLY16_gc;
+ 1c6:	80 e2       	ldi	r24, 0x20	; 32
+ 1c8:	83 83       	std	Z+3, r24	; 0x03
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:589
+    pADC->CTRLA    = ADC_ENABLE_bm;
+ 1ca:	81 e0       	ldi	r24, 0x01	; 1
+ 1cc:	80 83       	st	Z, r24
+init_TCA0():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:680
+
+void __attribute__((weak)) init_TCA0() {
+  /*  TYPE A TIMER   */
+  #if !defined(TCA_BUFFERED_3PIN)
+    #if defined(PORTMUX_CTRLC)
+      PORTMUX.CTRLC = TCA_PORTMUX;
+ 1ce:	80 93 02 02 	sts	0x0202, r24	; 0x800202 <digital_pin_to_bit_mask+0x7f7fae>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:684
+    #else
+      PORTMUX.TCAROUTEA = TCA_PORTMUX;
+    #endif
+    TCA0.SPLIT.CTRLD   = TCA_SPLIT_SPLITM_bm;
+ 1d2:	80 93 03 0a 	sts	0x0A03, r24	; 0x800a03 <digital_pin_to_bit_mask+0x7f87af>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:685
+    TCA0.SPLIT.LPER    = PWM_TIMER_PERIOD;
+ 1d6:	9e ef       	ldi	r25, 0xFE	; 254
+ 1d8:	90 93 26 0a 	sts	0x0A26, r25	; 0x800a26 <digital_pin_to_bit_mask+0x7f87d2>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:686
+    TCA0.SPLIT.HPER    = PWM_TIMER_PERIOD;
+ 1dc:	90 93 27 0a 	sts	0x0A27, r25	; 0x800a27 <digital_pin_to_bit_mask+0x7f87d3>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:687
+    TCA0.SPLIT.CTRLA   = (_TIMERA_PRESCALER | TCA_SPLIT_ENABLE_bm);
+ 1e0:	9b e0       	ldi	r25, 0x0B	; 11
+ 1e2:	90 93 00 0a 	sts	0x0A00, r25	; 0x800a00 <digital_pin_to_bit_mask+0x7f87ac>
+init_millis():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:345
+      #else
+        TCA0.SINGLE.INTCTRL = TCA_SINGLE_OVF_bm;
+      #endif
+    #elif defined(MILLIS_USE_TIMERD0)
+      TCD_t* pTCD;
+      _fastPtr_d(pTCD, &TCD0);
+ 1e6:	e0 e8       	ldi	r30, 0x80	; 128
+ 1e8:	fa e0       	ldi	r31, 0x0A	; 10
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:346
+      pTCD->CMPBCLR        = TIME_TRACKING_TIMER_PERIOD; // essentially, this is TOP
+ 1ea:	2d ef       	ldi	r18, 0xFD	; 253
+ 1ec:	31 e0       	ldi	r19, 0x01	; 1
+ 1ee:	26 a7       	std	Z+46, r18	; 0x2e
+ 1f0:	37 a7       	std	Z+47, r19	; 0x2f
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:347
+      pTCD->CTRLB          = 0x00; // oneramp mode
+ 1f2:	11 82       	std	Z+1, r1	; 0x01
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:348
+      pTCD->CTRLC          = 0x80;
+ 1f4:	90 e8       	ldi	r25, 0x80	; 128
+ 1f6:	92 83       	std	Z+2, r25	; 0x02
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:349
+      pTCD->INTCTRL        = 0x01; // enable interrupt
+ 1f8:	84 87       	std	Z+12, r24	; 0x0c
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:350
+      pTCD->CTRLA          = _TIMERD0_PRESCALER | 0x01; // set clock source and enable!
+ 1fa:	81 e1       	ldi	r24, 0x11	; 17
+ 1fc:	80 83       	st	Z, r24
+main():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:53
+ * just waiting for the DU-series now                                                           */
+int main() {
+  onBeforeInit(); // Emnpty callback called before init but after the .init stuff. First normal code executed
+  init(); // Interrupts are turned on just prior to init() returning.
+  initVariant();
+  if (!onAfterInit()) sei();  // enable interrupts.
+ 1fe:	78 94       	sei
+pinMode():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:51
+    return;                             /* ignore invalid pins passed at runtime */
+  }
+  volatile uint8_t * port_base = (volatile uint8_t *) (uint16_t) ((&PORTA) + digitalPinToPort(pin));
+  if (mode & 0x01) {
+    // OUTPUT mode, so write DIRSET with the mask.
+    *(port_base + 1) = bit_mask;
+ 200:	82 e0       	ldi	r24, 0x02	; 2
+ 202:	80 93 01 04 	sts	0x0401, r24	; 0x800401 <digital_pin_to_bit_mask+0x7f81ad>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:78
+  // by 2 bytes and one clock. And let's hope it is, because the code above would suck too if it was in X.
+  // Handwritten assembly that exploited the knowledge that there will never be a carry would save 1 word and 1 clock.
+  // and could probably save at least several times that in initializing the port_base pointer. But if you're using
+  // pinMode you probably don't care.
+  port_base += (uint8_t) digitalPinToBitPosition(pin);
+  bit_mask = *(port_base + 0x10);
+ 206:	80 91 11 04 	lds	r24, 0x0411	; 0x800411 <digital_pin_to_bit_mask+0x7f81bd>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:82
+  if (mode & 2) {
+    bit_mask |= 0x08;
+  } else {
+    bit_mask &= 0xF7;
+ 20a:	87 7f       	andi	r24, 0xF7	; 247
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:84
+  }
+  *(port_base + 0x10) = bit_mask;
+ 20c:	80 93 11 04 	sts	0x0411, r24	; 0x800411 <digital_pin_to_bit_mask+0x7f81bd>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:51
+    return;                             /* ignore invalid pins passed at runtime */
+  }
+  volatile uint8_t * port_base = (volatile uint8_t *) (uint16_t) ((&PORTA) + digitalPinToPort(pin));
+  if (mode & 0x01) {
+    // OUTPUT mode, so write DIRSET with the mask.
+    *(port_base + 1) = bit_mask;
+ 210:	84 e0       	ldi	r24, 0x04	; 4
+ 212:	80 93 01 04 	sts	0x0401, r24	; 0x800401 <digital_pin_to_bit_mask+0x7f81ad>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:78
+  // by 2 bytes and one clock. And let's hope it is, because the code above would suck too if it was in X.
+  // Handwritten assembly that exploited the knowledge that there will never be a carry would save 1 word and 1 clock.
+  // and could probably save at least several times that in initializing the port_base pointer. But if you're using
+  // pinMode you probably don't care.
+  port_base += (uint8_t) digitalPinToBitPosition(pin);
+  bit_mask = *(port_base + 0x10);
+ 216:	80 91 12 04 	lds	r24, 0x0412	; 0x800412 <digital_pin_to_bit_mask+0x7f81be>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:82
+  if (mode & 2) {
+    bit_mask |= 0x08;
+  } else {
+    bit_mask &= 0xF7;
+ 21a:	87 7f       	andi	r24, 0xF7	; 247
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:84
+  }
+  *(port_base + 0x10) = bit_mask;
+ 21c:	80 93 12 04 	sts	0x0412, r24	; 0x800412 <digital_pin_to_bit_mask+0x7f81be>
+loop():
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:9
+  pinMode(PIN_PA1, OUTPUT); 
+  pinMode(PIN_PA2, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(PIN_PA1, HIGH);
+ 220:	61 e0       	ldi	r22, 0x01	; 1
+ 222:	82 e0       	ldi	r24, 0x02	; 2
+ 224:	44 df       	rcall	.-376    	; 0xae <digitalWrite>
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:10
+  digitalWrite(PIN_PA2, HIGH);
+ 226:	61 e0       	ldi	r22, 0x01	; 1
+ 228:	83 e0       	ldi	r24, 0x03	; 3
+ 22a:	41 df       	rcall	.-382    	; 0xae <digitalWrite>
+delay():
+ 22c:	20 df       	rcall	.-448    	; 0x6e <delay.part.0.constprop.1>
+loop():
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:13
+  delay(500);
+  
+  digitalWrite(PIN_PA1, LOW);
+ 22e:	60 e0       	ldi	r22, 0x00	; 0
+ 230:	82 e0       	ldi	r24, 0x02	; 2
+ 232:	3d df       	rcall	.-390    	; 0xae <digitalWrite>
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:14
+  digitalWrite(PIN_PA2, LOW);
+ 234:	60 e0       	ldi	r22, 0x00	; 0
+ 236:	83 e0       	ldi	r24, 0x03	; 3
+ 238:	3a df       	rcall	.-396    	; 0xae <digitalWrite>
+delay():
+ 23a:	19 df       	rcall	.-462    	; 0x6e <delay.part.0.constprop.1>
+ 23c:	f1 cf       	rjmp	.-30     	; 0x220 <main+0x70>
+
+0000023e <_exit>:
+exit():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
+ 23e:	f8 94       	cli
+
+00000240 <__stop_program>:
+__stop_program():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
+ 240:	ff cf       	rjmp	.-2      	; 0x240 <__stop_program>

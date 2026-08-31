@@ -1,0 +1,1291 @@
+
+C:\Users\takas\AppData\Local\arduino\sketches\A9FC0C02C6BC09A5C3C0792C0DF7682D/LEDTest.ino.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+__vectors():
+../../../../../crt1/gcrt1.S:63
+   0:	19 c0       	rjmp	.+50     	; 0x34 <__ctors_end>
+../../../../../crt1/gcrt1.S:67
+   2:	3f c0       	rjmp	.+126    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:68
+   4:	3e c0       	rjmp	.+124    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:69
+   6:	3d c0       	rjmp	.+122    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:70
+   8:	3c c0       	rjmp	.+120    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:71
+   a:	3b c0       	rjmp	.+118    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:72
+   c:	3a c0       	rjmp	.+116    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:73
+   e:	39 c0       	rjmp	.+114    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:74
+  10:	38 c0       	rjmp	.+112    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:75
+  12:	94 c0       	rjmp	.+296    	; 0x13c <__vector_9>
+../../../../../crt1/gcrt1.S:76
+  14:	36 c0       	rjmp	.+108    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:77
+  16:	35 c0       	rjmp	.+106    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:78
+  18:	34 c0       	rjmp	.+104    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:79
+  1a:	33 c0       	rjmp	.+102    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:80
+  1c:	32 c0       	rjmp	.+100    	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:81
+  1e:	31 c0       	rjmp	.+98     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:82
+  20:	30 c0       	rjmp	.+96     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:83
+  22:	2f c0       	rjmp	.+94     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:84
+  24:	2e c0       	rjmp	.+92     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:85
+  26:	2d c0       	rjmp	.+90     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:86
+  28:	2c c0       	rjmp	.+88     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:87
+  2a:	2b c0       	rjmp	.+86     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:88
+  2c:	2a c0       	rjmp	.+84     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:89
+  2e:	29 c0       	rjmp	.+82     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:90
+  30:	28 c0       	rjmp	.+80     	; 0x82 <__bad_interrupt>
+../../../../../crt1/gcrt1.S:91
+  32:	27 c0       	rjmp	.+78     	; 0x82 <__bad_interrupt>
+
+00000034 <__ctors_end>:
+__trampolines_start():
+../../../../../crt1/gcrt1.S:230
+  34:	11 24       	eor	r1, r1
+../../../../../crt1/gcrt1.S:231
+  36:	1f be       	out	0x3f, r1	; 63
+../../../../../crt1/gcrt1.S:232
+  38:	cf ef       	ldi	r28, 0xFF	; 255
+../../../../../crt1/gcrt1.S:234
+  3a:	cd bf       	out	0x3d, r28	; 61
+../../../../../crt1/gcrt1.S:236
+  3c:	df e3       	ldi	r29, 0x3F	; 63
+../../../../../crt1/gcrt1.S:237
+  3e:	de bf       	out	0x3e, r29	; 62
+
+00000040 <_initThreeStuff()>:
+_Z15_initThreeStuffv():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:104
+
+  /* Minimum: Reset if we wound up here through malfunction - this relies on user clearing the  *
+   * register on startup, which is rarely done in Arduino land.                                 */
+  void __attribute__((weak)) init_reset_flags() ;
+  void __attribute__((weak)) init_reset_flags() {
+    uint8_t flags = RSTCTRL.RSTFR;
+  40:	80 91 40 00 	lds	r24, 0x0040	; 0x800040 <__RODATA_PM_OFFSET__+0x7f8040>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:105
+    RSTCTRL.RSTFR = flags;
+  44:	80 93 40 00 	sts	0x0040, r24	; 0x800040 <__RODATA_PM_OFFSET__+0x7f8040>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:106
+    if (flags == 0) {
+  48:	81 11       	cpse	r24, r1
+  4a:	05 c0       	rjmp	.+10     	; 0x56 <_initThreeStuff()+0x16>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:107
+      _PROTECTED_WRITE(RSTCTRL.SWRR, 1);
+  4c:	98 ed       	ldi	r25, 0xD8	; 216
+  4e:	21 e0       	ldi	r18, 0x01	; 1
+  50:	94 bf       	out	0x34, r25	; 52
+  52:	20 93 41 00 	sts	0x0041, r18	; 0x800041 <__RODATA_PM_OFFSET__+0x7f8041>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:109
+    }
+    GPIOR0 = flags;
+  56:	8c bb       	out	0x1c, r24	; 28
+
+00000058 <__do_copy_data>:
+__do_copy_data():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2409
+  58:	1f e3       	ldi	r17, 0x3F	; 63
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2410
+  5a:	a0 e0       	ldi	r26, 0x00	; 0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2411
+  5c:	bf e3       	ldi	r27, 0x3F	; 63
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2412
+  5e:	e4 e1       	ldi	r30, 0x14	; 20
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2413
+  60:	f5 e0       	ldi	r31, 0x05	; 5
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2414
+  62:	02 c0       	rjmp	.+4      	; 0x68 <__do_copy_data+0x10>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2417
+  64:	05 90       	lpm	r0, Z+
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2422
+  66:	0d 92       	st	X+, r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2424
+  68:	a4 30       	cpi	r26, 0x04	; 4
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2425
+  6a:	b1 07       	cpc	r27, r17
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2426
+  6c:	d9 f7       	brne	.-10     	; 0x64 <__do_copy_data+0xc>
+
+0000006e <__do_clear_bss>:
+__do_clear_bss():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2441
+  6e:	2f e3       	ldi	r18, 0x3F	; 63
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2442
+  70:	a4 e0       	ldi	r26, 0x04	; 4
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2443
+  72:	bf e3       	ldi	r27, 0x3F	; 63
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2444
+  74:	01 c0       	rjmp	.+2      	; 0x78 <.do_clear_bss_start>
+
+00000076 <.do_clear_bss_loop>:
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2446
+  76:	1d 92       	st	X+, r1
+
+00000078 <.do_clear_bss_start>:
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2448
+  78:	ae 30       	cpi	r26, 0x0E	; 14
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2449
+  7a:	b2 07       	cpc	r27, r18
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2450
+  7c:	e1 f7       	brne	.-8      	; 0x76 <.do_clear_bss_loop>
+.do_clear_bss_start():
+../../../../../crt1/gcrt1.S:314
+  7e:	8d d0       	rcall	.+282    	; 0x19a <main>
+../../../../../crt1/gcrt1.S:315
+  80:	47 c2       	rjmp	.+1166   	; 0x510 <_exit>
+
+00000082 <__bad_interrupt>:
+__vector_22():
+../../../../../crt1/gcrt1.S:209
+  82:	be cf       	rjmp	.-132    	; 0x0 <__vectors>
+
+00000084 <delay.part.0>:
+delay.part.0():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:243
+        start += 1000;
+      }
+    }
+  }
+#else
+  void delay(uint32_t ms) {
+  84:	0f 93       	push	r16
+  86:	1f 93       	push	r17
+  88:	ab 01       	movw	r20, r22
+  8a:	bc 01       	movw	r22, r24
+millis():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:167
+  unsigned long millis() {
+    // return timer_overflow_count; // for debugging timekeeping issues where these variables are out of scope from the sketch
+    unsigned long m;
+    // disable interrupts while we read timer_millis or we might get an
+    // inconsistent value (e.g. in the middle of a write to timer_millis)
+    uint8_t oldSREG = SREG;
+  8c:	8f b7       	in	r24, 0x3f	; 63
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:168
+    cli();
+  8e:	f8 94       	cli
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:182
+        if (!(rtccount & 0x8000)) m += 64000;
+      }
+      SREG = oldSREG;
+      m += rtccount - (rtccount >> 5) + (rtccount >> 7);
+    #else
+      m = timingStruct.timer_millis;
+  90:	00 91 08 3f 	lds	r16, 0x3F08	; 0x803f08 <__data_end+0x4>
+  94:	10 91 09 3f 	lds	r17, 0x3F09	; 0x803f09 <__data_end+0x5>
+  98:	20 91 0a 3f 	lds	r18, 0x3F0A	; 0x803f0a <__data_end+0x6>
+  9c:	30 91 0b 3f 	lds	r19, 0x3F0B	; 0x803f0b <__data_end+0x7>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:183
+      SREG = oldSREG;
+  a0:	8f bf       	out	0x3f, r24	; 63
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:167
+  unsigned long millis() {
+    // return timer_overflow_count; // for debugging timekeeping issues where these variables are out of scope from the sketch
+    unsigned long m;
+    // disable interrupts while we read timer_millis or we might get an
+    // inconsistent value (e.g. in the middle of a write to timer_millis)
+    uint8_t oldSREG = SREG;
+  a2:	ef b7       	in	r30, 0x3f	; 63
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:168
+    cli();
+  a4:	f8 94       	cli
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:182
+        if (!(rtccount & 0x8000)) m += 64000;
+      }
+      SREG = oldSREG;
+      m += rtccount - (rtccount >> 5) + (rtccount >> 7);
+    #else
+      m = timingStruct.timer_millis;
+  a6:	80 91 08 3f 	lds	r24, 0x3F08	; 0x803f08 <__data_end+0x4>
+  aa:	90 91 09 3f 	lds	r25, 0x3F09	; 0x803f09 <__data_end+0x5>
+  ae:	a0 91 0a 3f 	lds	r26, 0x3F0A	; 0x803f0a <__data_end+0x6>
+  b2:	b0 91 0b 3f 	lds	r27, 0x3F0B	; 0x803f0b <__data_end+0x7>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:183
+      SREG = oldSREG;
+  b6:	ef bf       	out	0x3f, r30	; 63
+delay.part.0():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:252
+      while(ms--) {
+        _delay_ms(1);
+      }
+    } else {
+      uint32_t start = millis();
+      while (millis() - start < ms);
+  b8:	80 1b       	sub	r24, r16
+  ba:	91 0b       	sbc	r25, r17
+  bc:	a2 0b       	sbc	r26, r18
+  be:	b3 0b       	sbc	r27, r19
+  c0:	84 17       	cp	r24, r20
+  c2:	95 07       	cpc	r25, r21
+  c4:	a6 07       	cpc	r26, r22
+  c6:	b7 07       	cpc	r27, r23
+  c8:	60 f3       	brcs	.-40     	; 0xa2 <delay.part.0+0x1e>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:254
+    }
+  }
+  ca:	1f 91       	pop	r17
+  cc:	0f 91       	pop	r16
+  ce:	08 95       	ret
+
+000000d0 <digitalWrite.constprop.1>:
+digitalWrite.constprop.1():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:256
+  /* Set output to value
+  This runs regardless of whether the pin is an output,
+  allowing the pin to be staged with
+  changed to an output. Code in the wild relies on this behavior. */
+  if (val == LOW) { /* If LOW */
+    port->OUTCLR = bit_mask;
+  d0:	94 e0       	ldi	r25, 0x04	; 4
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:255
+  PORT_t *port = digitalPinToPortStruct(pin);
+  /* Set output to value
+  This runs regardless of whether the pin is an output,
+  allowing the pin to be staged with
+  changed to an output. Code in the wild relies on this behavior. */
+  if (val == LOW) { /* If LOW */
+  d2:	81 11       	cpse	r24, r1
+  d4:	16 c0       	rjmp	.+44     	; 0x102 <__DATA_REGION_LENGTH__+0x2>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:256
+    port->OUTCLR = bit_mask;
+  d6:	90 93 06 04 	sts	0x0406, r25	; 0x800406 <__RODATA_PM_OFFSET__+0x7f8406>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:280
+  } else {
+    port->OUTSET = bit_mask;
+  }
+
+  /* Input direction */
+  if (!(port->DIR & bit_mask)) {
+  da:	90 91 00 04 	lds	r25, 0x0400	; 0x800400 <__RODATA_PM_OFFSET__+0x7f8400>
+  de:	92 fd       	sbrc	r25, 2
+  e0:	0a c0       	rjmp	.+20     	; 0xf6 <digitalWrite.constprop.1+0x26>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:287
+    uint8_t bit_pos = digitalPinToBitPosition(pin);
+    /* Calculate where pin control register is */
+    volatile uint8_t *pin_ctrl_reg = getPINnCTRLregister(port, bit_pos);
+
+    /* Save system status and disable interrupts */
+    uint8_t status = SREG;
+  e2:	9f b7       	in	r25, 0x3f	; 63
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:288
+    cli();
+  e4:	f8 94       	cli
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:290
+
+    if (val == LOW) {
+  e6:	81 11       	cpse	r24, r1
+  e8:	0f c0       	rjmp	.+30     	; 0x108 <__DATA_REGION_LENGTH__+0x8>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:292
+      /* Disable pullup */
+      *pin_ctrl_reg &= ~PORT_PULLUPEN_bm;
+  ea:	80 91 12 04 	lds	r24, 0x0412	; 0x800412 <__RODATA_PM_OFFSET__+0x7f8412>
+  ee:	87 7f       	andi	r24, 0xF7	; 247
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:295
+    } else {
+      /* Enable pull-up */
+      *pin_ctrl_reg |= PORT_PULLUPEN_bm;
+  f0:	80 93 12 04 	sts	0x0412, r24	; 0x800412 <__RODATA_PM_OFFSET__+0x7f8412>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:299
+    }
+
+    /* Restore system status */
+    SREG = status;
+  f4:	9f bf       	out	0x3f, r25	; 63
+turnOffPWM():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:142
+          } else {
+            // Otherwise, it's WO3-5. These will always be on 0b00hhh000,. Here since we ARE working with a high half timer, we need to just leftshift it once.
+            bit_mask <<= 1;
+          }
+        #endif // End if 8 vs normal parts
+        TCA0.SPLIT.CTRLB &= ~bit_mask;
+  f6:	80 91 01 0a 	lds	r24, 0x0A01	; 0x800a01 <__RODATA_PM_OFFSET__+0x7f8a01>
+  fa:	8b 7f       	andi	r24, 0xFB	; 251
+  fc:	80 93 01 0a 	sts	0x0A01, r24	; 0x800a01 <__RODATA_PM_OFFSET__+0x7f8a01>
+digitalWrite.constprop.1():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:312
+   * analogWritten() 255, then digitallyWritten() to HIGH, which
+   * would turn it off for the time between turnOffPWM() and
+   * PORT->OUTCLR)
+   * Since there's no penalty, why make a glitch we don't have to? */
+  turnOffPWM(pin);
+}
+ 100:	08 95       	ret
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:276
+    // val will now be 0 (LOW) if the toggling made it LOW
+    // or bit_mask if not. And further down, we only need to
+    // know if it's
+  /* If HIGH OR  > TOGGLE  */
+  } else {
+    port->OUTSET = bit_mask;
+ 102:	90 93 05 04 	sts	0x0405, r25	; 0x800405 <__RODATA_PM_OFFSET__+0x7f8405>
+ 106:	e9 cf       	rjmp	.-46     	; 0xda <digitalWrite.constprop.1+0xa>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:295
+    if (val == LOW) {
+      /* Disable pullup */
+      *pin_ctrl_reg &= ~PORT_PULLUPEN_bm;
+    } else {
+      /* Enable pull-up */
+      *pin_ctrl_reg |= PORT_PULLUPEN_bm;
+ 108:	80 91 12 04 	lds	r24, 0x0412	; 0x800412 <__RODATA_PM_OFFSET__+0x7f8412>
+ 10c:	88 60       	ori	r24, 0x08	; 8
+ 10e:	f0 cf       	rjmp	.-32     	; 0xf0 <digitalWrite.constprop.1+0x20>
+
+00000110 <pinMode.constprop.5>:
+pinMode.constprop.5():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:51
+    return;                             /* ignore invalid pins passed at runtime */
+  }
+  volatile uint8_t * port_base = (volatile uint8_t *) (uint16_t) ((&PORTA) + digitalPinToPort(pin));
+  if (mode & 0x01) {
+    // OUTPUT mode, so write DIRSET with the mask.
+    *(port_base + 1) = bit_mask;
+ 110:	84 e0       	ldi	r24, 0x04	; 4
+ 112:	80 93 01 04 	sts	0x0401, r24	; 0x800401 <__RODATA_PM_OFFSET__+0x7f8401>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:78
+  // by 2 bytes and one clock. And let's hope it is, because the code above would suck too if it was in X.
+  // Handwritten assembly that exploited the knowledge that there will never be a carry would save 1 word and 1 clock.
+  // and could probably save at least several times that in initializing the port_base pointer. But if you're using
+  // pinMode you probably don't care.
+  port_base += (uint8_t) digitalPinToBitPosition(pin);
+  bit_mask = *(port_base + 0x10);
+ 116:	e2 e0       	ldi	r30, 0x02	; 2
+ 118:	f4 e0       	ldi	r31, 0x04	; 4
+ 11a:	80 89       	ldd	r24, Z+16	; 0x10
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:82
+  if (mode & 2) {
+    bit_mask |= 0x08;
+  } else {
+    bit_mask &= 0xF7;
+ 11c:	87 7f       	andi	r24, 0xF7	; 247
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:84
+  }
+  *(port_base + 0x10) = bit_mask;
+ 11e:	80 8b       	std	Z+16, r24	; 0x10
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_digital.c:85
+}
+ 120:	08 95       	ret
+
+00000122 <analogWrite.constprop.0>:
+analogWrite.constprop.0():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:1143
+/**********************************************************************
+* PART 1: TIMERA
+**********************************************************************/
+    #if defined(TCA0)
+      case TIMERA0: {
+        if (val <= 0) { /* if zero or negative drive digital low */
+ 122:	00 97       	sbiw	r24, 0x00	; 0
+ 124:	19 f4       	brne	.+6      	; 0x12c <analogWrite.constprop.0+0xa>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:1144
+          digitalWrite(pin, LOW);
+ 126:	80 e0       	ldi	r24, 0x00	; 0
+ 128:	d3 df       	rcall	.-90     	; 0xd0 <digitalWrite.constprop.1>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:1354
+      break;
+    }
+    // Now that everything is said and done, we've set the pin high or low as if it's not a PWM pin, or told the timer to give it PWM if it is - this is a better timwe to finally turn on the output drivers.
+    // True, it is at most 1-2 PWM timer ticks under typical settings, it's probably at least 1 tick, maybe several at 1 MHz (haven't timed analogWrite lately)
+  } // end of switch/case
+  pinMode(pin, OUTPUT);
+ 12a:	f2 cf       	rjmp	.-28     	; 0x110 <pinMode.constprop.5>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:1189
+              offset += 4;
+            } else if (bit_mask & 0x22) {
+              offset += 2;
+            }
+            timer_cmp_out = ((volatile uint8_t *)(&TCA0.SPLIT.LCMP0)) + (offset); //finally at the very end we get the actual pointer (since volatile variables should be treated like nuclear waste due to performance impact)
+            (*timer_cmp_out) = (val); // write to it - and we're done with it.
+ 12c:	80 93 2c 0a 	sts	0x0A2C, r24	; 0x800a2c <__RODATA_PM_OFFSET__+0x7f8a2c>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:1190
+            TCA0.SPLIT.CTRLB |= bit_mask;
+ 130:	80 91 01 0a 	lds	r24, 0x0A01	; 0x800a01 <__RODATA_PM_OFFSET__+0x7f8a01>
+ 134:	84 60       	ori	r24, 0x04	; 4
+ 136:	80 93 01 0a 	sts	0x0A01, r24	; 0x800a01 <__RODATA_PM_OFFSET__+0x7f8a01>
+ 13a:	f7 cf       	rjmp	.-18     	; 0x12a <analogWrite.constprop.0+0x8>
+
+0000013c <__vector_9>:
+__vector_9():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_micros_ISR.h:839
+  #else
+    ISR(MILLIS_TIMER_VECTOR, ISR_NAKED) {
+      // Common Interrupt header for TCB, TCA and TCD;
+      // Clears the Timer Interrupt flag and pushes the CPU Registers
+      // 7 words / 7 clocks
+      __asm__ __volatile__(
+ 13c:	8f 93       	push	r24
+ 13e:	82 e0       	ldi	r24, 0x02	; 2
+ 140:	80 93 0b 0a 	sts	0x0A0B, r24	; 0x800a0b <__RODATA_PM_OFFSET__+0x7f8a0b>
+ 144:	8f b7       	in	r24, 0x3f	; 63
+ 146:	8f 93       	push	r24
+ 148:	ef 93       	push	r30
+ 14a:	ff 93       	push	r31
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_micros_ISR.h:950
+        [MIINC]  "M" ((0x0000 - MILLIS_INC) & 0xFF),
+        [MINCD]  "M" ((0xFFFF - MILLIS_INC) & 0xFF)
+      );
+  */
+
+      __asm__ __volatile__(
+ 14c:	e4 e0       	ldi	r30, 0x04	; 4
+ 14e:	ff e3       	ldi	r31, 0x3F	; 63
+ 150:	9f 93       	push	r25
+ 152:	68 94       	set
+ 154:	8f ef       	ldi	r24, 0xFF	; 255
+ 156:	0d c0       	rjmp	.+26     	; 0x172 <sub4>
+
+00000158 <ovf_end>:
+ 158:	e8 94       	clt
+ 15a:	84 81       	ldd	r24, Z+4	; 0x04
+ 15c:	95 81       	ldd	r25, Z+5	; 0x05
+ 15e:	80 5d       	subi	r24, 0xD0	; 208
+ 160:	9c 4f       	sbci	r25, 0xFC	; 252
+ 162:	84 83       	std	Z+4, r24	; 0x04
+ 164:	95 83       	std	Z+5, r25	; 0x05
+ 166:	88 5e       	subi	r24, 0xE8	; 232
+ 168:	93 40       	sbci	r25, 0x03	; 3
+ 16a:	80 f0       	brcs	.+32     	; 0x18c <sub_end>
+ 16c:	84 83       	std	Z+4, r24	; 0x04
+ 16e:	95 83       	std	Z+5, r25	; 0x05
+ 170:	8f ef       	ldi	r24, 0xFF	; 255
+
+00000172 <sub4>:
+ 172:	90 81       	ld	r25, Z
+ 174:	98 1b       	sub	r25, r24
+ 176:	91 93       	st	Z+, r25
+ 178:	90 81       	ld	r25, Z
+ 17a:	9f 4f       	sbci	r25, 0xFF	; 255
+ 17c:	91 93       	st	Z+, r25
+ 17e:	90 81       	ld	r25, Z
+ 180:	9f 4f       	sbci	r25, 0xFF	; 255
+ 182:	91 93       	st	Z+, r25
+ 184:	90 81       	ld	r25, Z
+ 186:	9f 4f       	sbci	r25, 0xFF	; 255
+ 188:	91 93       	st	Z+, r25
+ 18a:	36 f3       	brts	.-52     	; 0x158 <ovf_end>
+
+0000018c <sub_end>:
+ 18c:	9f 91       	pop	r25
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_micros_ISR.h:1012
+        [MINCD]  "M" ((0xFFFF - MILLIS_INC) & 0xFF)
+      );
+    #endif /* (defined(MILLIS_USE_TIMERB0) || defined(MILLIS_USE_TIMERB1) || defined(MILLIS_USE_TIMERB2) || defined(MILLIS_USE_TIMERB3) || defined(MILLIS_USE_TIMERB4)) */
+    // Common ISR Epilogue for TCA, TCB and TCD, popping register in reverse Order
+    // 6 words, 14 clocks
+    __asm__ __volatile__(
+ 18e:	ff 91       	pop	r31
+ 190:	ef 91       	pop	r30
+ 192:	8f 91       	pop	r24
+ 194:	8f bf       	out	0x3f, r24	; 63
+ 196:	8f 91       	pop	r24
+ 198:	18 95       	reti
+
+0000019a <main>:
+main():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:460
+  #if (CLOCK_SOURCE == 0)
+    #if (defined(CLOCK_TUNE_INTERNAL))
+      tune_internal(); // Will be inlined as only called once. Just too long and ugly to put two implementations in middle of this.
+    #else
+      #if defined(_MCLK_CTRLB) && defined(F_CPU) && defined(_MAIN_CLOCK_PRESCALER)
+        _PROTECTED_WRITE(CLKCTRL_MCLKCTRLB,_MCLK_CTRLB);
+ 19a:	88 ed       	ldi	r24, 0xD8	; 216
+ 19c:	90 e0       	ldi	r25, 0x00	; 0
+ 19e:	84 bf       	out	0x34, r24	; 52
+ 1a0:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__RODATA_PM_OFFSET__+0x7f8061>
+init_ADC0():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:552
+
+
+/********************************* ADC ****************************************/
+void __attribute__((weak)) init_ADC0() {
+  ADC_t* pADC;
+  _fastPtr_d(pADC, &ADC0);
+ 1a4:	e0 e0       	ldi	r30, 0x00	; 0
+ 1a6:	f6 e0       	ldi	r31, 0x06	; 6
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:573
+   **************************************************************************/
+    //                              30 MHz / 32 = 937 kHz,  32 MHz / 32 =  1 MHz.
+    #if   F_CPU   > 24000000     // 24 MHz / 16 = 1.5 MHz,  25 MHz / 32 =  780 kHz
+      pADC->CTRLC  = ADC_PRESC_DIV32_gc | ADC_REFSEL_VDDREF_gc | ADC_SAMPCAP_bm;
+    #elif F_CPU  >= 12000000    // 16 MHz / 16 = 1.0 MHz,  20 MHz / 16 = 1.25 MHz
+      pADC->CTRLC  = ADC_PRESC_DIV16_gc | ADC_REFSEL_VDDREF_gc | ADC_SAMPCAP_bm;
+ 1a8:	83 e5       	ldi	r24, 0x53	; 83
+ 1aa:	82 83       	std	Z+2, r24	; 0x02
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:584
+      pADC->CTRLC  =  ADC_PRESC_DIV2_gc | ADC_REFSEL_VDDREF_gc | ADC_SAMPCAP_bm;
+    #endif
+    #if   (F_CPU == 6000000 || F_CPU == 12000000 || F_CPU == 24000000 || F_CPU ==25000000)
+      pADC->SAMPCTRL = (7); // 9 ADC clocks, 12 us
+    #elif (F_CPU == 5000000 || F_CPU == 10000000 || F_CPU == 20000000)
+      pADC->SAMPCTRL = (13);   // 15 ADC clock,s 12 us
+ 1ac:	8d e0       	ldi	r24, 0x0D	; 13
+ 1ae:	85 83       	std	Z+5, r24	; 0x05
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:588
+    #else
+      pADC->SAMPCTRL = (10); // 12 ADC clocks, 12 us
+    #endif
+    pADC->CTRLD    = ADC_INITDLY_DLY16_gc;
+ 1b0:	80 e2       	ldi	r24, 0x20	; 32
+ 1b2:	83 83       	std	Z+3, r24	; 0x03
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:589
+    pADC->CTRLA    = ADC_ENABLE_bm;
+ 1b4:	c1 e0       	ldi	r28, 0x01	; 1
+ 1b6:	c0 83       	st	Z, r28
+init_TCA0():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:680
+
+void __attribute__((weak)) init_TCA0() {
+  /*  TYPE A TIMER   */
+  #if !defined(TCA_BUFFERED_3PIN)
+    #if defined(PORTMUX_CTRLC)
+      PORTMUX.CTRLC = TCA_PORTMUX;
+ 1b8:	c0 93 02 02 	sts	0x0202, r28	; 0x800202 <__RODATA_PM_OFFSET__+0x7f8202>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:684
+    #else
+      PORTMUX.TCAROUTEA = TCA_PORTMUX;
+    #endif
+    TCA0.SPLIT.CTRLD   = TCA_SPLIT_SPLITM_bm;
+ 1bc:	c0 93 03 0a 	sts	0x0A03, r28	; 0x800a03 <__RODATA_PM_OFFSET__+0x7f8a03>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:685
+    TCA0.SPLIT.LPER    = PWM_TIMER_PERIOD;
+ 1c0:	8e ef       	ldi	r24, 0xFE	; 254
+ 1c2:	80 93 26 0a 	sts	0x0A26, r24	; 0x800a26 <__RODATA_PM_OFFSET__+0x7f8a26>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:686
+    TCA0.SPLIT.HPER    = PWM_TIMER_PERIOD;
+ 1c6:	80 93 27 0a 	sts	0x0A27, r24	; 0x800a27 <__RODATA_PM_OFFSET__+0x7f8a27>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:687
+    TCA0.SPLIT.CTRLA   = (_TIMERA_PRESCALER | TCA_SPLIT_ENABLE_bm);
+ 1ca:	8b e0       	ldi	r24, 0x0B	; 11
+ 1cc:	80 93 00 0a 	sts	0x0A00, r24	; 0x800a00 <__RODATA_PM_OFFSET__+0x7f8a00>
+init_millis():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:339
+  #if defined(MILLIS_USE_TIMERNONE)
+    badCall("init_millis() is only valid with millis time keeping enabled.");
+  #else
+    #if defined(MILLIS_USE_TIMERA0)
+      #if !defined(TCA_BUFFERED_3PIN)
+        TCA0.SPLIT.INTCTRL = TCA_SPLIT_HUNF_bm;
+ 1d0:	82 e0       	ldi	r24, 0x02	; 2
+ 1d2:	80 93 0a 0a 	sts	0x0A0A, r24	; 0x800a0a <__RODATA_PM_OFFSET__+0x7f8a0a>
+main():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/main.cpp:53
+ * just waiting for the DU-series now                                                           */
+int main() {
+  onBeforeInit(); // Emnpty callback called before init but after the .init stuff. First normal code executed
+  init(); // Interrupts are turned on just prior to init() returning.
+  initVariant();
+  if (!onAfterInit()) sei();  // enable interrupts.
+ 1d6:	78 94       	sei
+setup():
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:10
+
+// 明るさの上限設定（元の255に対して30：控えめな発光）
+const int MAX_BRIGHTNESS = 30; 
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+ 1d8:	9b df       	rcall	.-202    	; 0x110 <pinMode.constprop.5>
+analogRead():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:716
+      // don't waste flash on smallest parts.
+      if ((pin & 0x7F) > 0x1F) { // highest valid mux value for any 0 or 1-series part.
+        return ADC_ERROR_BAD_PIN_OR_CHANNEL;
+      }
+    #endif
+    if (!ADC0.CTRLA & 0x01) return ADC_ERROR_DISABLED;
+ 1da:	80 91 00 06 	lds	r24, 0x0600	; 0x800600 <__RODATA_PM_OFFSET__+0x7f8600>
+main():
+ 1de:	69 ef       	ldi	r22, 0xF9	; 249
+ 1e0:	72 e8       	ldi	r23, 0x82	; 130
+analogRead():
+ 1e2:	88 23       	and	r24, r24
+ 1e4:	61 f0       	breq	.+24     	; 0x1fe <main+0x64>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:720
+    pin &= 0x1F;
+    /* Reference should be already set up */
+    /* Select channel */
+    ADC0.MUXPOS = (pin << ADC_MUXPOS_gp);
+ 1e6:	c0 93 06 06 	sts	0x0606, r28	; 0x800606 <__RODATA_PM_OFFSET__+0x7f8606>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:727
+    #if defined(STRICT_ERROR_CHECKING)
+      if (ADC0.COMMAND) return ADC_ERROR_BUSY;
+    #endif
+
+    /* Start conversion */
+    ADC0.COMMAND = ADC_STCONV_bm;
+ 1ea:	c0 93 08 06 	sts	0x0608, r28	; 0x800608 <__RODATA_PM_OFFSET__+0x7f8608>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:730
+
+    /* Wait for result ready */
+    while (!(ADC0.INTFLAGS & ADC_RESRDY_bm));
+ 1ee:	80 91 0b 06 	lds	r24, 0x060B	; 0x80060b <__RODATA_PM_OFFSET__+0x7f860b>
+ 1f2:	80 ff       	sbrs	r24, 0
+ 1f4:	fc cf       	rjmp	.-8      	; 0x1ee <main+0x54>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:733
+
+    /* Combine two bytes */
+    return ADC0.RES;
+ 1f6:	60 91 10 06 	lds	r22, 0x0610	; 0x800610 <__RODATA_PM_OFFSET__+0x7f8610>
+ 1fa:	70 91 11 06 	lds	r23, 0x0611	; 0x800611 <__RODATA_PM_OFFSET__+0x7f8611>
+setup():
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:13
+  
+  // 未接続ピンのアナログノイズで乱数を初期化
+  randomSeed(analogRead(PIN_PA1));
+ 1fe:	07 2e       	mov	r0, r23
+ 200:	00 0c       	add	r0, r0
+ 202:	88 0b       	sbc	r24, r24
+ 204:	99 0b       	sbc	r25, r25
+randomSeed():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/WMath.cpp:29
+extern "C" {
+#include "stdlib.h"
+}
+
+void randomSeed(unsigned long seed) {
+  if (seed != 0) {
+ 206:	61 15       	cp	r22, r1
+ 208:	71 05       	cpc	r23, r1
+ 20a:	81 05       	cpc	r24, r1
+ 20c:	91 05       	cpc	r25, r1
+ 20e:	09 f0       	breq	.+2      	; 0x212 <main+0x78>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/WMath.cpp:30
+    srandom(seed);
+ 210:	0d d1       	rcall	.+538    	; 0x42c <srandom>
+loop():
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:20
+
+void loop() {
+  // 1. じわ〜〜っと明るく（約 6.0 秒：30ステップ × 180ms）
+  for (int i = 0; i <= MAX_BRIGHTNESS; i++) {
+    long longI = i;
+    int brightness = (int)((longI * longI) / MAX_BRIGHTNESS);
+ 212:	9e e1       	ldi	r25, 0x1E	; 30
+ 214:	c9 2e       	mov	r12, r25
+ 216:	d1 2c       	mov	r13, r1
+ 218:	e1 2c       	mov	r14, r1
+ 21a:	f1 2c       	mov	r15, r1
+random():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/WMath.cpp:38
+
+long random(long howbig) {
+  if (howbig == 0) {
+    return 0;
+  }
+  return random() % howbig;
+ 21c:	29 ea       	ldi	r18, 0xA9	; 169
+ 21e:	82 2e       	mov	r8, r18
+ 220:	21 e6       	ldi	r18, 0x61	; 97
+ 222:	92 2e       	mov	r9, r18
+ 224:	a1 2c       	mov	r10, r1
+ 226:	b1 2c       	mov	r11, r1
+main():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring_analog.c:716
+      // don't waste flash on smallest parts.
+      if ((pin & 0x7F) > 0x1F) { // highest valid mux value for any 0 or 1-series part.
+        return ADC_ERROR_BAD_PIN_OR_CHANNEL;
+      }
+    #endif
+    if (!ADC0.CTRLA & 0x01) return ADC_ERROR_DISABLED;
+ 228:	41 2c       	mov	r4, r1
+ 22a:	51 2c       	mov	r5, r1
+ 22c:	32 01       	movw	r6, r4
+loop():
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:20
+ 22e:	a3 01       	movw	r20, r6
+ 230:	92 01       	movw	r18, r4
+ 232:	c3 01       	movw	r24, r6
+ 234:	b2 01       	movw	r22, r4
+ 236:	5d d1       	rcall	.+698    	; 0x4f2 <__mulsi3>
+ 238:	a7 01       	movw	r20, r14
+ 23a:	96 01       	movw	r18, r12
+ 23c:	00 d1       	rcall	.+512    	; 0x43e <__divmodsi4>
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:22
+    
+    analogWrite(ledPin, brightness);
+ 23e:	c9 01       	movw	r24, r18
+ 240:	70 df       	rcall	.-288    	; 0x122 <analogWrite.constprop.0>
+delay():
+ 242:	64 eb       	ldi	r22, 0xB4	; 180
+ 244:	70 e0       	ldi	r23, 0x00	; 0
+ 246:	80 e0       	ldi	r24, 0x00	; 0
+ 248:	90 e0       	ldi	r25, 0x00	; 0
+ 24a:	1c df       	rcall	.-456    	; 0x84 <delay.part.0>
+ 24c:	2f ef       	ldi	r18, 0xFF	; 255
+ 24e:	42 1a       	sub	r4, r18
+ 250:	52 0a       	sbc	r5, r18
+ 252:	62 0a       	sbc	r6, r18
+ 254:	72 0a       	sbc	r7, r18
+loop():
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:18
+  randomSeed(analogRead(PIN_PA1));
+}
+
+void loop() {
+  // 1. じわ〜〜っと明るく（約 6.0 秒：30ステップ × 180ms）
+  for (int i = 0; i <= MAX_BRIGHTNESS; i++) {
+ 256:	8f e1       	ldi	r24, 0x1F	; 31
+ 258:	48 16       	cp	r4, r24
+ 25a:	51 04       	cpc	r5, r1
+ 25c:	61 04       	cpc	r6, r1
+ 25e:	71 04       	cpc	r7, r1
+ 260:	31 f7       	brne	.-52     	; 0x22e <main+0x94>
+delay():
+ 262:	64 ef       	ldi	r22, 0xF4	; 244
+ 264:	71 e0       	ldi	r23, 0x01	; 1
+ 266:	80 e0       	ldi	r24, 0x00	; 0
+ 268:	90 e0       	ldi	r25, 0x00	; 0
+ 26a:	0c df       	rcall	.-488    	; 0x84 <delay.part.0>
+ 26c:	8e e1       	ldi	r24, 0x1E	; 30
+ 26e:	48 2e       	mov	r4, r24
+ 270:	51 2c       	mov	r5, r1
+ 272:	61 2c       	mov	r6, r1
+ 274:	71 2c       	mov	r7, r1
+loop():
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:32
+  delay(500);
+
+  // 2. じわ〜〜っと消灯（約 7.5 秒：30ステップ × 225ms）
+  for (int i = MAX_BRIGHTNESS; i >= 0; i--) {
+    long longI = i;
+    int brightness = (int)((longI * longI) / MAX_BRIGHTNESS);
+ 276:	a3 01       	movw	r20, r6
+ 278:	92 01       	movw	r18, r4
+ 27a:	c3 01       	movw	r24, r6
+ 27c:	b2 01       	movw	r22, r4
+ 27e:	39 d1       	rcall	.+626    	; 0x4f2 <__mulsi3>
+ 280:	a7 01       	movw	r20, r14
+ 282:	96 01       	movw	r18, r12
+ 284:	dc d0       	rcall	.+440    	; 0x43e <__divmodsi4>
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:34
+    
+    analogWrite(ledPin, brightness);
+ 286:	c9 01       	movw	r24, r18
+ 288:	4c df       	rcall	.-360    	; 0x122 <analogWrite.constprop.0>
+delay():
+ 28a:	61 ee       	ldi	r22, 0xE1	; 225
+ 28c:	70 e0       	ldi	r23, 0x00	; 0
+ 28e:	80 e0       	ldi	r24, 0x00	; 0
+ 290:	90 e0       	ldi	r25, 0x00	; 0
+ 292:	f8 de       	rcall	.-528    	; 0x84 <delay.part.0>
+ 294:	e1 e0       	ldi	r30, 0x01	; 1
+ 296:	4e 1a       	sub	r4, r30
+ 298:	51 08       	sbc	r5, r1
+ 29a:	61 08       	sbc	r6, r1
+ 29c:	71 08       	sbc	r7, r1
+loop():
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:30
+
+  // ピーク時の余韻（約 0.5 秒）
+  delay(500);
+
+  // 2. じわ〜〜っと消灯（約 7.5 秒：30ステップ × 225ms）
+  for (int i = MAX_BRIGHTNESS; i >= 0; i--) {
+ 29e:	ff ef       	ldi	r31, 0xFF	; 255
+ 2a0:	4f 16       	cp	r4, r31
+ 2a2:	5f 06       	cpc	r5, r31
+ 2a4:	6f 06       	cpc	r6, r31
+ 2a6:	7f 06       	cpc	r7, r31
+ 2a8:	31 f7       	brne	.-52     	; 0x276 <main+0xdc>
+D:\Project\FireFlies\Arduino\LEDTest/LEDTest.ino:39
+    analogWrite(ledPin, brightness);
+    delay(225); 
+  }
+
+  // 完全消灯（0出力）
+  analogWrite(ledPin, 0);
+ 2aa:	90 e0       	ldi	r25, 0x00	; 0
+ 2ac:	80 e0       	ldi	r24, 0x00	; 0
+ 2ae:	39 df       	rcall	.-398    	; 0x122 <analogWrite.constprop.0>
+random():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/WMath.cpp:38
+ 2b0:	71 d0       	rcall	.+226    	; 0x394 <random>
+ 2b2:	a5 01       	movw	r20, r10
+ 2b4:	94 01       	movw	r18, r8
+ 2b6:	c3 d0       	rcall	.+390    	; 0x43e <__divmodsi4>
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/WMath.cpp:46
+long random(long howsmall, long howbig) {
+  if (howsmall >= howbig) {
+    return howsmall;
+  }
+  long diff = howbig - howsmall;
+  return random(diff) + howsmall;
+ 2b8:	2b 01       	movw	r4, r22
+ 2ba:	3c 01       	movw	r6, r24
+ 2bc:	28 e8       	ldi	r18, 0x88	; 136
+ 2be:	42 0e       	add	r4, r18
+ 2c0:	23 e1       	ldi	r18, 0x13	; 19
+ 2c2:	52 1e       	adc	r5, r18
+ 2c4:	61 1c       	adc	r6, r1
+ 2c6:	71 1c       	adc	r7, r1
+ 2c8:	dc 01       	movw	r26, r24
+ 2ca:	cb 01       	movw	r24, r22
+delay():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:246
+  }
+#else
+  void delay(uint32_t ms) {
+    if (__builtin_constant_p(ms) && ms < 16) {
+      _delay_ms(ms);
+    } else if (ms < 16) {
+ 2cc:	e0 e1       	ldi	r30, 0x10	; 16
+ 2ce:	4e 16       	cp	r4, r30
+ 2d0:	51 04       	cpc	r5, r1
+ 2d2:	61 04       	cpc	r6, r1
+ 2d4:	71 04       	cpc	r7, r1
+ 2d6:	50 f0       	brcs	.+20     	; 0x2ec <main+0x152>
+ 2d8:	c3 01       	movw	r24, r6
+ 2da:	b2 01       	movw	r22, r4
+ 2dc:	d3 de       	rcall	.-602    	; 0x84 <delay.part.0>
+ 2de:	a4 cf       	rjmp	.-184    	; 0x228 <main+0x8e>
+_delay_ms():
+c:\users\takas\appdata\local\arduino15\packages\dxcore\tools\avr-gcc\7.3.0-atmel3.6.1-azduino7b1\avr\include\util/delay.h:187
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 2e0:	e7 e8       	ldi	r30, 0x87	; 135
+ 2e2:	f3 e1       	ldi	r31, 0x13	; 19
+ 2e4:	31 97       	sbiw	r30, 0x01	; 1
+ 2e6:	f1 f7       	brne	.-4      	; 0x2e4 <main+0x14a>
+ 2e8:	00 c0       	rjmp	.+0      	; 0x2ea <main+0x150>
+ 2ea:	00 00       	nop
+ 2ec:	01 97       	sbiw	r24, 0x01	; 1
+ 2ee:	a1 09       	sbc	r26, r1
+ 2f0:	b1 09       	sbc	r27, r1
+delay():
+C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.6.11\cores\megatinycore/wiring.c:247
+      while(ms--) {
+ 2f2:	87 37       	cpi	r24, 0x77	; 119
+ 2f4:	fc ee       	ldi	r31, 0xEC	; 236
+ 2f6:	9f 07       	cpc	r25, r31
+ 2f8:	ff ef       	ldi	r31, 0xFF	; 255
+ 2fa:	af 07       	cpc	r26, r31
+ 2fc:	bf 07       	cpc	r27, r31
+ 2fe:	81 f7       	brne	.-32     	; 0x2e0 <main+0x146>
+ 300:	93 cf       	rjmp	.-218    	; 0x228 <main+0x8e>
+
+00000302 <random_r>:
+random_r():
+ 302:	8f 92       	push	r8
+ 304:	9f 92       	push	r9
+ 306:	af 92       	push	r10
+ 308:	bf 92       	push	r11
+ 30a:	cf 92       	push	r12
+ 30c:	df 92       	push	r13
+ 30e:	ef 92       	push	r14
+ 310:	ff 92       	push	r15
+ 312:	cf 93       	push	r28
+ 314:	df 93       	push	r29
+ 316:	ec 01       	movw	r28, r24
+ 318:	68 81       	ld	r22, Y
+ 31a:	79 81       	ldd	r23, Y+1	; 0x01
+ 31c:	8a 81       	ldd	r24, Y+2	; 0x02
+ 31e:	9b 81       	ldd	r25, Y+3	; 0x03
+ 320:	61 15       	cp	r22, r1
+ 322:	71 05       	cpc	r23, r1
+ 324:	81 05       	cpc	r24, r1
+ 326:	91 05       	cpc	r25, r1
+ 328:	21 f4       	brne	.+8      	; 0x332 <random_r+0x30>
+ 32a:	64 e2       	ldi	r22, 0x24	; 36
+ 32c:	79 ed       	ldi	r23, 0xD9	; 217
+ 32e:	8b e5       	ldi	r24, 0x5B	; 91
+ 330:	97 e0       	ldi	r25, 0x07	; 7
+ 332:	2d e1       	ldi	r18, 0x1D	; 29
+ 334:	33 ef       	ldi	r19, 0xF3	; 243
+ 336:	41 e0       	ldi	r20, 0x01	; 1
+ 338:	50 e0       	ldi	r21, 0x00	; 0
+ 33a:	81 d0       	rcall	.+258    	; 0x43e <__divmodsi4>
+ 33c:	49 01       	movw	r8, r18
+ 33e:	5a 01       	movw	r10, r20
+ 340:	9b 01       	movw	r18, r22
+ 342:	ac 01       	movw	r20, r24
+ 344:	a7 ea       	ldi	r26, 0xA7	; 167
+ 346:	b1 e4       	ldi	r27, 0x41	; 65
+ 348:	96 d0       	rcall	.+300    	; 0x476 <__muluhisi3>
+ 34a:	6b 01       	movw	r12, r22
+ 34c:	7c 01       	movw	r14, r24
+ 34e:	ac ee       	ldi	r26, 0xEC	; 236
+ 350:	b4 ef       	ldi	r27, 0xF4	; 244
+ 352:	a5 01       	movw	r20, r10
+ 354:	94 01       	movw	r18, r8
+ 356:	9b d0       	rcall	.+310    	; 0x48e <__mulohisi3>
+ 358:	c6 0e       	add	r12, r22
+ 35a:	d7 1e       	adc	r13, r23
+ 35c:	e8 1e       	adc	r14, r24
+ 35e:	f9 1e       	adc	r15, r25
+ 360:	f7 fe       	sbrs	r15, 7
+ 362:	06 c0       	rjmp	.+12     	; 0x370 <random_r+0x6e>
+ 364:	81 e0       	ldi	r24, 0x01	; 1
+ 366:	c8 1a       	sub	r12, r24
+ 368:	d1 08       	sbc	r13, r1
+ 36a:	e1 08       	sbc	r14, r1
+ 36c:	80 e8       	ldi	r24, 0x80	; 128
+ 36e:	f8 0a       	sbc	r15, r24
+ 370:	c8 82       	st	Y, r12
+ 372:	d9 82       	std	Y+1, r13	; 0x01
+ 374:	ea 82       	std	Y+2, r14	; 0x02
+ 376:	fb 82       	std	Y+3, r15	; 0x03
+ 378:	c7 01       	movw	r24, r14
+ 37a:	b6 01       	movw	r22, r12
+ 37c:	9f 77       	andi	r25, 0x7F	; 127
+ 37e:	df 91       	pop	r29
+ 380:	cf 91       	pop	r28
+ 382:	ff 90       	pop	r15
+ 384:	ef 90       	pop	r14
+ 386:	df 90       	pop	r13
+ 388:	cf 90       	pop	r12
+ 38a:	bf 90       	pop	r11
+ 38c:	af 90       	pop	r10
+ 38e:	9f 90       	pop	r9
+ 390:	8f 90       	pop	r8
+ 392:	08 95       	ret
+
+00000394 <random>:
+random():
+ 394:	8f 92       	push	r8
+ 396:	9f 92       	push	r9
+ 398:	af 92       	push	r10
+ 39a:	bf 92       	push	r11
+ 39c:	cf 92       	push	r12
+ 39e:	df 92       	push	r13
+ 3a0:	ef 92       	push	r14
+ 3a2:	ff 92       	push	r15
+ 3a4:	60 91 00 3f 	lds	r22, 0x3F00	; 0x803f00 <__DATA_REGION_ORIGIN__>
+ 3a8:	70 91 01 3f 	lds	r23, 0x3F01	; 0x803f01 <__DATA_REGION_ORIGIN__+0x1>
+ 3ac:	80 91 02 3f 	lds	r24, 0x3F02	; 0x803f02 <__DATA_REGION_ORIGIN__+0x2>
+ 3b0:	90 91 03 3f 	lds	r25, 0x3F03	; 0x803f03 <__DATA_REGION_ORIGIN__+0x3>
+ 3b4:	61 15       	cp	r22, r1
+ 3b6:	71 05       	cpc	r23, r1
+ 3b8:	81 05       	cpc	r24, r1
+ 3ba:	91 05       	cpc	r25, r1
+ 3bc:	21 f4       	brne	.+8      	; 0x3c6 <random+0x32>
+ 3be:	64 e2       	ldi	r22, 0x24	; 36
+ 3c0:	79 ed       	ldi	r23, 0xD9	; 217
+ 3c2:	8b e5       	ldi	r24, 0x5B	; 91
+ 3c4:	97 e0       	ldi	r25, 0x07	; 7
+ 3c6:	2d e1       	ldi	r18, 0x1D	; 29
+ 3c8:	33 ef       	ldi	r19, 0xF3	; 243
+ 3ca:	41 e0       	ldi	r20, 0x01	; 1
+ 3cc:	50 e0       	ldi	r21, 0x00	; 0
+ 3ce:	37 d0       	rcall	.+110    	; 0x43e <__divmodsi4>
+ 3d0:	49 01       	movw	r8, r18
+ 3d2:	5a 01       	movw	r10, r20
+ 3d4:	9b 01       	movw	r18, r22
+ 3d6:	ac 01       	movw	r20, r24
+ 3d8:	a7 ea       	ldi	r26, 0xA7	; 167
+ 3da:	b1 e4       	ldi	r27, 0x41	; 65
+ 3dc:	4c d0       	rcall	.+152    	; 0x476 <__muluhisi3>
+ 3de:	6b 01       	movw	r12, r22
+ 3e0:	7c 01       	movw	r14, r24
+ 3e2:	ac ee       	ldi	r26, 0xEC	; 236
+ 3e4:	b4 ef       	ldi	r27, 0xF4	; 244
+ 3e6:	a5 01       	movw	r20, r10
+ 3e8:	94 01       	movw	r18, r8
+ 3ea:	51 d0       	rcall	.+162    	; 0x48e <__mulohisi3>
+ 3ec:	c6 0e       	add	r12, r22
+ 3ee:	d7 1e       	adc	r13, r23
+ 3f0:	e8 1e       	adc	r14, r24
+ 3f2:	f9 1e       	adc	r15, r25
+ 3f4:	f7 fe       	sbrs	r15, 7
+ 3f6:	06 c0       	rjmp	.+12     	; 0x404 <__LOCK_REGION_LENGTH__+0x4>
+ 3f8:	81 e0       	ldi	r24, 0x01	; 1
+ 3fa:	c8 1a       	sub	r12, r24
+ 3fc:	d1 08       	sbc	r13, r1
+ 3fe:	e1 08       	sbc	r14, r1
+ 400:	80 e8       	ldi	r24, 0x80	; 128
+ 402:	f8 0a       	sbc	r15, r24
+ 404:	c0 92 00 3f 	sts	0x3F00, r12	; 0x803f00 <__DATA_REGION_ORIGIN__>
+ 408:	d0 92 01 3f 	sts	0x3F01, r13	; 0x803f01 <__DATA_REGION_ORIGIN__+0x1>
+ 40c:	e0 92 02 3f 	sts	0x3F02, r14	; 0x803f02 <__DATA_REGION_ORIGIN__+0x2>
+ 410:	f0 92 03 3f 	sts	0x3F03, r15	; 0x803f03 <__DATA_REGION_ORIGIN__+0x3>
+ 414:	c7 01       	movw	r24, r14
+ 416:	b6 01       	movw	r22, r12
+ 418:	9f 77       	andi	r25, 0x7F	; 127
+ 41a:	ff 90       	pop	r15
+ 41c:	ef 90       	pop	r14
+ 41e:	df 90       	pop	r13
+ 420:	cf 90       	pop	r12
+ 422:	bf 90       	pop	r11
+ 424:	af 90       	pop	r10
+ 426:	9f 90       	pop	r9
+ 428:	8f 90       	pop	r8
+ 42a:	08 95       	ret
+
+0000042c <srandom>:
+srandom():
+ 42c:	60 93 00 3f 	sts	0x3F00, r22	; 0x803f00 <__DATA_REGION_ORIGIN__>
+ 430:	70 93 01 3f 	sts	0x3F01, r23	; 0x803f01 <__DATA_REGION_ORIGIN__+0x1>
+ 434:	80 93 02 3f 	sts	0x3F02, r24	; 0x803f02 <__DATA_REGION_ORIGIN__+0x2>
+ 438:	90 93 03 3f 	sts	0x3F03, r25	; 0x803f03 <__DATA_REGION_ORIGIN__+0x3>
+ 43c:	08 95       	ret
+
+0000043e <__divmodsi4>:
+__divmodsi4():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1686
+ 43e:	05 2e       	mov	r0, r21
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1687
+ 440:	97 fb       	bst	r25, 7
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1688
+ 442:	16 f4       	brtc	.+4      	; 0x448 <__divmodsi4+0xa>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1689
+ 444:	00 94       	com	r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1690
+ 446:	0f d0       	rcall	.+30     	; 0x466 <__negsi2>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1692
+ 448:	57 fd       	sbrc	r21, 7
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1693
+ 44a:	05 d0       	rcall	.+10     	; 0x456 <__divmodsi4_neg2>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1694
+ 44c:	24 d0       	rcall	.+72     	; 0x496 <__udivmodsi4>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1695
+ 44e:	07 fc       	sbrc	r0, 7
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1696
+ 450:	02 d0       	rcall	.+4      	; 0x456 <__divmodsi4_neg2>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1697
+ 452:	46 f4       	brtc	.+16     	; 0x464 <__divmodsi4_exit>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1698
+ 454:	08 c0       	rjmp	.+16     	; 0x466 <__negsi2>
+
+00000456 <__divmodsi4_neg2>:
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1701
+ 456:	50 95       	com	r21
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1702
+ 458:	40 95       	com	r20
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1703
+ 45a:	30 95       	com	r19
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1704
+ 45c:	21 95       	neg	r18
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1705
+ 45e:	3f 4f       	sbci	r19, 0xFF	; 255
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1706
+ 460:	4f 4f       	sbci	r20, 0xFF	; 255
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1707
+ 462:	5f 4f       	sbci	r21, 0xFF	; 255
+
+00000464 <__divmodsi4_exit>:
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1709
+ 464:	08 95       	ret
+
+00000466 <__negsi2>:
+__negsi2():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1718
+ 466:	90 95       	com	r25
+ 468:	80 95       	com	r24
+ 46a:	70 95       	com	r23
+ 46c:	61 95       	neg	r22
+ 46e:	7f 4f       	sbci	r23, 0xFF	; 255
+ 470:	8f 4f       	sbci	r24, 0xFF	; 255
+ 472:	9f 4f       	sbci	r25, 0xFF	; 255
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1719
+ 474:	08 95       	ret
+
+00000476 <__muluhisi3>:
+__muluhisi3():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:626
+ 476:	31 d0       	rcall	.+98     	; 0x4da <__umulhisi3>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:627
+ 478:	a5 9f       	mul	r26, r21
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:628
+ 47a:	90 0d       	add	r25, r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:629
+ 47c:	b4 9f       	mul	r27, r20
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:630
+ 47e:	90 0d       	add	r25, r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:631
+ 480:	a4 9f       	mul	r26, r20
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:632
+ 482:	80 0d       	add	r24, r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:633
+ 484:	91 1d       	adc	r25, r1
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:634
+ 486:	11 24       	eor	r1, r1
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:635
+ 488:	08 95       	ret
+
+0000048a <__mulshisi3>:
+__mulshisi3():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:603
+ 48a:	b7 ff       	sbrs	r27, 7
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:605
+ 48c:	f4 cf       	rjmp	.-24     	; 0x476 <__muluhisi3>
+
+0000048e <__mulohisi3>:
+__mulohisi3():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:613
+ 48e:	f3 df       	rcall	.-26     	; 0x476 <__muluhisi3>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:615
+ 490:	82 1b       	sub	r24, r18
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:616
+ 492:	93 0b       	sbc	r25, r19
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:617
+ 494:	08 95       	ret
+
+00000496 <__udivmodsi4>:
+__udivmodsi4():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1638
+ 496:	a1 e2       	ldi	r26, 0x21	; 33
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1639
+ 498:	1a 2e       	mov	r1, r26
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1640
+ 49a:	aa 1b       	sub	r26, r26
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1641
+ 49c:	bb 1b       	sub	r27, r27
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1642
+ 49e:	fd 01       	movw	r30, r26
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1644
+ 4a0:	0d c0       	rjmp	.+26     	; 0x4bc <__udivmodsi4_ep>
+
+000004a2 <__udivmodsi4_loop>:
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1646
+ 4a2:	aa 1f       	adc	r26, r26
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1647
+ 4a4:	bb 1f       	adc	r27, r27
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1648
+ 4a6:	ee 1f       	adc	r30, r30
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1649
+ 4a8:	ff 1f       	adc	r31, r31
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1650
+ 4aa:	a2 17       	cp	r26, r18
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1651
+ 4ac:	b3 07       	cpc	r27, r19
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1652
+ 4ae:	e4 07       	cpc	r30, r20
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1653
+ 4b0:	f5 07       	cpc	r31, r21
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1654
+ 4b2:	20 f0       	brcs	.+8      	; 0x4bc <__udivmodsi4_ep>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1655
+ 4b4:	a2 1b       	sub	r26, r18
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1656
+ 4b6:	b3 0b       	sbc	r27, r19
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1657
+ 4b8:	e4 0b       	sbc	r30, r20
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1658
+ 4ba:	f5 0b       	sbc	r31, r21
+
+000004bc <__udivmodsi4_ep>:
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1660
+ 4bc:	66 1f       	adc	r22, r22
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1661
+ 4be:	77 1f       	adc	r23, r23
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1662
+ 4c0:	88 1f       	adc	r24, r24
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1663
+ 4c2:	99 1f       	adc	r25, r25
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1664
+ 4c4:	1a 94       	dec	r1
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1665
+ 4c6:	69 f7       	brne	.-38     	; 0x4a2 <__udivmodsi4_loop>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1667
+ 4c8:	60 95       	com	r22
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1668
+ 4ca:	70 95       	com	r23
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1669
+ 4cc:	80 95       	com	r24
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1670
+ 4ce:	90 95       	com	r25
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1672
+ 4d0:	9b 01       	movw	r18, r22
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1674
+ 4d2:	ac 01       	movw	r20, r24
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1676
+ 4d4:	bd 01       	movw	r22, r26
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1678
+ 4d6:	cf 01       	movw	r24, r30
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:1680
+ 4d8:	08 95       	ret
+
+000004da <__umulhisi3>:
+__umulhisi3():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:564
+ 4da:	a2 9f       	mul	r26, r18
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:565
+ 4dc:	b0 01       	movw	r22, r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:566
+ 4de:	b3 9f       	mul	r27, r19
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:567
+ 4e0:	c0 01       	movw	r24, r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:568
+ 4e2:	a3 9f       	mul	r26, r19
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:578
+ 4e4:	01 d0       	rcall	.+2      	; 0x4e8 <__umulhisi3+0xe>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:580
+ 4e6:	b2 9f       	mul	r27, r18
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:581
+ 4e8:	70 0d       	add	r23, r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:582
+ 4ea:	81 1d       	adc	r24, r1
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:583
+ 4ec:	11 24       	eor	r1, r1
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:584
+ 4ee:	91 1d       	adc	r25, r1
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:585
+ 4f0:	08 95       	ret
+
+000004f2 <__mulsi3>:
+__mulsi3():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:648
+ 4f2:	db 01       	movw	r26, r22
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:649
+ 4f4:	8f 93       	push	r24
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:650
+ 4f6:	9f 93       	push	r25
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:651
+ 4f8:	be df       	rcall	.-132    	; 0x476 <__muluhisi3>
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:652
+ 4fa:	bf 91       	pop	r27
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:653
+ 4fc:	af 91       	pop	r26
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:655
+ 4fe:	a2 9f       	mul	r26, r18
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:656
+ 500:	80 0d       	add	r24, r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:657
+ 502:	91 1d       	adc	r25, r1
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:658
+ 504:	a3 9f       	mul	r26, r19
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:659
+ 506:	90 0d       	add	r25, r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:660
+ 508:	b2 9f       	mul	r27, r18
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:661
+ 50a:	90 0d       	add	r25, r0
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:662
+ 50c:	11 24       	eor	r1, r1
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:663
+ 50e:	08 95       	ret
+
+00000510 <_exit>:
+exit():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2278
+ 510:	f8 94       	cli
+
+00000512 <__stop_program>:
+__stop_program():
+/home/admin/Arduino/toolchain-avr-special-master/gcc-build/avr/avrxmega3/short-calls/libgcc/../../../../../gcc/libgcc/config/avr/lib1funcs.S:2280
+ 512:	ff cf       	rjmp	.-2      	; 0x512 <__stop_program>
