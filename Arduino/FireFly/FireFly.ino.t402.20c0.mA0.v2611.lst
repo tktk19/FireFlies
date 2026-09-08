@@ -836,7 +836,7 @@ long random(long howbig) {
   }
   return random() % howbig;
  2a2:	2a d1       	rcall	.+596    	; 0x4f8 <random>
- 2a4:	20 e1       	ldi	r18, 0x10	; 16
+ 2a4:	29 e2       	ldi	r18, 0x29	; 41
  2a6:	30 e0       	ldi	r19, 0x00	; 0
  2a8:	40 e0       	ldi	r20, 0x00	; 0
  2aa:	50 e0       	ldi	r21, 0x00	; 0
