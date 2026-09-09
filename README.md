@@ -46,22 +46,28 @@
 
 ## 📄 設計資料・回路図リンク (`docs/`)
 
-回路・基板に関する各種設計資料は [`docs/`](file:///d:/Project/FireFlies/docs) ディレクトリに収録されています。
+回路・基板に関する各種設計資料は [`docs/`](docs/) ディレクトリに収録されています。
 
-* **回路図 (SVG)**: [circuit_v1.svg](file:///d:/Project/FireFlies/docs/circuit_v1.svg) （[`docs/circuit_v1.svg`](docs/circuit_v1.svg)）
+* **回路図 (SVG)**: [`docs/circuit_v1.svg`](docs/circuit_v1.svg)
   * SchemDraw で描画された視認性の高い回路図
-* **回路作図スクリプト**: [make_circuit_draw.py](file:///d:/Project/FireFlies/docs/make_circuit_draw.py) （[`docs/make_circuit_draw.py`](docs/make_circuit_draw.py)）
+* **回路作図スクリプト**: [`docs/make_circuit_draw.py`](docs/make_circuit_draw.py)
   * Python の SchemDraw ライブラリを用いて回路図 SVG を自動生成するスクリプト
-* **回路図 (PDF/EasyEDA)**: [SCH_Schematic1_2026-09-01.pdf](file:///d:/Project/FireFlies/docs/SCH_Schematic1_2026-09-01.pdf) （[`docs/SCH_Schematic1_2026-09-01.pdf`](docs/SCH_Schematic1_2026-09-01.pdf)）
+* **回路図 (PDF/EasyEDA)**: [`docs/SCH_Schematic1_2026-09-01.pdf`](docs/SCH_Schematic1_2026-09-01.pdf)
   * EasyEDA で設計された正式な回路図面
-* **基板アートワーク (PDF/EasyEDA)**: [PCB_PCB1_2026-09-01.pdf](file:///d:/Project/FireFlies/docs/PCB_PCB1_2026-09-01.pdf) （[`docs/PCB_PCB1_2026-09-01.pdf`](docs/PCB_PCB1_2026-09-01.pdf)）
+* **基板アートワーク (PDF/EasyEDA)**: [`docs/PCB_PCB1_2026-09-01.pdf`](docs/PCB_PCB1_2026-09-01.pdf)
   * 実装基板のレイアウトおよび配線パターン図
+
+### 実機・動作確認ギャラリー (`docs/imgs/`)
+
+| モジュール外観（斜視） | モジュール外観（上面） | 同期明滅テスト風景 |
+| :---: | :---: | :---: |
+| [![モジュール外観（斜視）](docs/imgs/module_close_up.jpg)](docs/imgs/module_close_up.jpg) | [![モジュール外観（上面）](docs/imgs/module_top_view.jpg)](docs/imgs/module_top_view.jpg) | [![同期明滅テスト風景](docs/imgs/sync_glow_test.jpg)](docs/imgs/sync_glow_test.jpg) |
 
 ---
 
 ## 💻 ソフトウェア・アルゴリズム (`Arduino/FireFly/`)
 
-メインプログラム: [FireFly.ino](file:///d:/Project/FireFlies/Arduino/FireFly/FireFly.ino)
+メインプログラム: [`Arduino/FireFly/FireFly.ino`](Arduino/FireFly/FireFly.ino)
 
 ### 状態遷移フロー
 
