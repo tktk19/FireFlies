@@ -9,7 +9,7 @@ const int ledPin = PIN_PA2;   // 物理5ピン (PA2)
 const int DARK_THRESHOLD = 819;  // 4.0V以上で「暗い」と判定
 const int LIGHT_THRESHOLD = 512; // 2.5V以下で「他の光を検知」と判定
 
-const int ABSOLUTE_MAX_BRIGHTNESS = 50; 
+const int ABSOLUTE_MAX_BRIGHTNESS = 200;
 
 void setup() {
   // ★重要：ADCの基準電圧を電源電圧（VDD/5V）に明示的に設定
