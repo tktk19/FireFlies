@@ -686,7 +686,7 @@ C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.
  226:	80 65       	ori	r24, 0x50	; 80
  228:	80 93 02 06 	sts	0x0602, r24	; 0x800602 <__RODATA_PM_OFFSET__+0x7f8602>
 setup():
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:20
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:50
   // ★重要：ADCの基準電圧を電源電圧（VDD/5V）に明示的に設定
 #if defined(VDD)
   analogReference(VDD);
@@ -738,7 +738,7 @@ C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.
  24c:	60 91 10 06 	lds	r22, 0x0610	; 0x800610 <__RODATA_PM_OFFSET__+0x7f8610>
  250:	70 91 11 06 	lds	r23, 0x0611	; 0x800611 <__RODATA_PM_OFFSET__+0x7f8611>
 setup():
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:21
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:51
   randomSeed(analogRead(PIN_PA1));
  254:	07 2e       	mov	r0, r23
  256:	00 0c       	add	r0, r0
@@ -761,7 +761,7 @@ C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.
     srandom(seed);
  266:	94 d1       	rcall	.+808    	; 0x590 <srandom>
 flashFirefly():
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:31
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:61
   int upDelay = random(5, 7);
   int downDelay = random(8, 12);
 
@@ -816,14 +816,14 @@ C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.
  292:	80 91 10 06 	lds	r24, 0x0610	; 0x800610 <__RODATA_PM_OFFSET__+0x7f8610>
  296:	90 91 11 06 	lds	r25, 0x0611	; 0x800611 <__RODATA_PM_OFFSET__+0x7f8611>
 loop():
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:52
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:82
 
 void loop() {
   int currentVal = analogRead(sensorPin);
 
-  // 4.0V (ADC 819) 以上の場合のみ「夜」と判定
+  // 暗所判定（設定したDARK_THRESHOLD以上の場合のみ「夜」と判定）
   if (currentVal >= DARK_THRESHOLD) {
- 29a:	83 33       	cpi	r24, 0x33	; 51
+ 29a:	80 32       	cpi	r24, 0x20	; 32
  29c:	93 40       	sbci	r25, 0x03	; 3
  29e:	0c f4       	brge	.+2      	; 0x2a2 <main+0xd8>
  2a0:	da c0       	rjmp	.+436    	; 0x456 <__LOCK_REGION_LENGTH__+0x56>
@@ -836,7 +836,7 @@ long random(long howbig) {
   }
   return random() % howbig;
  2a2:	2a d1       	rcall	.+596    	; 0x4f8 <random>
- 2a4:	2f eb       	ldi	r18, 0xBF	; 191
+ 2a4:	26 ef       	ldi	r18, 0xF6	; 246
  2a6:	30 e0       	ldi	r19, 0x00	; 0
  2a8:	40 e0       	ldi	r20, 0x00	; 0
  2aa:	50 e0       	ldi	r21, 0x00	; 0
@@ -919,7 +919,7 @@ long random(long howsmall, long howbig) {
  2fe:	d1 2c       	mov	r13, r1
  300:	76 01       	movw	r14, r12
 flashFirefly():
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:30
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:60
   int maxLimit = random(10, ABSOLUTE_MAX_BRIGHTNESS + 1);
   int upDelay = random(5, 7);
   int downDelay = random(8, 12);
@@ -933,7 +933,7 @@ D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:30
  30a:	a5 d1       	rcall	.+842    	; 0x656 <__mulsi3>
  30c:	9b 01       	movw	r18, r22
  30e:	ac 01       	movw	r20, r24
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:31
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:61
     int pwmVal = (int)((iSquared * maxLimit) / 65025);
  310:	c5 01       	movw	r24, r10
  312:	b4 01       	movw	r22, r8
@@ -941,11 +941,11 @@ D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:31
  316:	a3 01       	movw	r20, r6
  318:	92 01       	movw	r18, r4
  31a:	43 d1       	rcall	.+646    	; 0x5a2 <__divmodsi4>
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:32
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:62
     analogWrite(ledPin, pwmVal);
  31c:	c9 01       	movw	r24, r18
  31e:	01 df       	rcall	.-510    	; 0x122 <analogWrite.constprop.0>
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:33
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:63
     delay(upDelay); 
  320:	69 81       	ldd	r22, Y+1	; 0x01
  322:	7a 81       	ldd	r23, Y+2	; 0x02
@@ -957,7 +957,7 @@ D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:33
  32e:	d3 0a       	sbc	r13, r19
  330:	e3 0a       	sbc	r14, r19
  332:	f3 0a       	sbc	r15, r19
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:29
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:59
 void flashFirefly() {
   int maxLimit = random(10, ABSOLUTE_MAX_BRIGHTNESS + 1);
   int upDelay = random(5, 7);
@@ -996,7 +996,7 @@ long random(long howsmall, long howbig) {
  350:	8f 4f       	sbci	r24, 0xFF	; 255
  352:	9f 4f       	sbci	r25, 0xFF	; 255
 flashFirefly():
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:36
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:66
     int pwmVal = (int)((iSquared * maxLimit) / 65025);
     analogWrite(ledPin, pwmVal);
     delay(upDelay); 
@@ -1008,7 +1008,7 @@ D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:36
  358:	d1 2c       	mov	r13, r1
  35a:	76 01       	movw	r14, r12
  35c:	ca 94       	dec	r12
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:39
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:69
 
   for (int i = 255; i >= 0; i--) {
     long iSquared = (long)i * i;
@@ -1019,7 +1019,7 @@ D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:39
  366:	77 d1       	rcall	.+750    	; 0x656 <__mulsi3>
  368:	9b 01       	movw	r18, r22
  36a:	ac 01       	movw	r20, r24
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:40
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:70
     int pwmVal = (int)((iSquared * maxLimit) / 65025);
  36c:	c5 01       	movw	r24, r10
  36e:	b4 01       	movw	r22, r8
@@ -1027,11 +1027,11 @@ D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:40
  372:	a3 01       	movw	r20, r6
  374:	92 01       	movw	r18, r4
  376:	15 d1       	rcall	.+554    	; 0x5a2 <__divmodsi4>
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:41
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:71
     analogWrite(ledPin, pwmVal);
  378:	c9 01       	movw	r24, r18
  37a:	d3 de       	rcall	.-602    	; 0x122 <analogWrite.constprop.0>
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:42
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:72
     delay(downDelay); 
  37c:	6d 81       	ldd	r22, Y+5	; 0x05
  37e:	7e 81       	ldd	r23, Y+6	; 0x06
@@ -1043,7 +1043,7 @@ D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:42
  38a:	d1 08       	sbc	r13, r1
  38c:	e1 08       	sbc	r14, r1
  38e:	f1 08       	sbc	r15, r1
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:38
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:68
     delay(upDelay); 
   }
 
@@ -1056,7 +1056,7 @@ D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:38
  396:	e8 06       	cpc	r14, r24
  398:	f8 06       	cpc	r15, r24
  39a:	09 f7       	brne	.-62     	; 0x35e <main+0x194>
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:45
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:75
     int pwmVal = (int)((iSquared * maxLimit) / 65025);
     analogWrite(ledPin, pwmVal);
     delay(downDelay); 
@@ -1067,8 +1067,8 @@ D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:45
  39e:	80 e0       	ldi	r24, 0x00	; 0
  3a0:	c0 de       	rcall	.-640    	; 0x122 <analogWrite.constprop.0>
 delay():
- 3a2:	60 ed       	ldi	r22, 0xD0	; 208
- 3a4:	77 e0       	ldi	r23, 0x07	; 7
+ 3a2:	68 ec       	ldi	r22, 0xC8	; 200
+ 3a4:	70 e0       	ldi	r23, 0x00	; 0
  3a6:	80 e0       	ldi	r24, 0x00	; 0
  3a8:	90 e0       	ldi	r25, 0x00	; 0
  3aa:	6c de       	rcall	.-808    	; 0x84 <delay.part.0>
@@ -1153,8 +1153,8 @@ C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.
       SREG = oldSREG;
  3f2:	2f bf       	out	0x3f, r18	; 63
 loop():
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:60
-    delay(2000); // 自己受光ガード
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:90
+    delay(200); // 自己受光ガード（自発光直後の誤反応を防止）
 
     unsigned long sleepMs = random(4000, 10001);
     unsigned long startSleep = millis();
@@ -1207,12 +1207,12 @@ long random(long howsmall, long howbig) {
  420:	8f 4f       	sbci	r24, 0xFF	; 255
  422:	9f 4f       	sbci	r25, 0xFF	; 255
 loop():
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:65
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:95
       int sensorVal = analogRead(sensorPin);
 
-      // 休止中に 2.5V (ADC 512) 以下に落ちたら光検知
+      // 休止中に光を検知（sensorVal < LIGHT_THRESHOLD）したら協調発光
       if (sensorVal < LIGHT_THRESHOLD) {
-        delay(random(300, 1201));
+        delay(random(300, 1201)); // 同期発光までのわずかな応答揺らぎ
  424:	91 de       	rcall	.-734    	; 0x148 <delay>
  426:	26 cf       	rjmp	.-436    	; 0x274 <main+0xaa>
 analogRead():
@@ -1246,14 +1246,14 @@ C:\Users\takas\AppData\Local\Arduino15\packages\megaTinyCore\hardware\megaavr\2.
  43c:	80 91 10 06 	lds	r24, 0x0610	; 0x800610 <__RODATA_PM_OFFSET__+0x7f8610>
  440:	90 91 11 06 	lds	r25, 0x0611	; 0x800611 <__RODATA_PM_OFFSET__+0x7f8611>
 loop():
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:64
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:94
 
     while (millis() - startSleep < sleepMs) {
       int sensorVal = analogRead(sensorPin);
 
-      // 休止中に 2.5V (ADC 512) 以下に落ちたら光検知
+      // 休止中に光を検知（sensorVal < LIGHT_THRESHOLD）したら協調発光
       if (sensorVal < LIGHT_THRESHOLD) {
- 444:	81 15       	cp	r24, r1
+ 444:	80 38       	cpi	r24, 0x80	; 128
  446:	92 40       	sbci	r25, 0x02	; 2
  448:	1c f3       	brlt	.-58     	; 0x410 <__LOCK_REGION_LENGTH__+0x10>
 delay():
@@ -1264,12 +1264,12 @@ delay():
  452:	18 de       	rcall	.-976    	; 0x84 <delay.part.0>
  454:	c4 cf       	rjmp	.-120    	; 0x3de <main+0x214>
 loop():
-D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:74
+D:\Project\FireFlies\Arduino\FireFly/FireFly.ino:104
       delay(50); 
     }
 
   } else {
-    // 4.0V未満（昼間・明かりあり）は消灯待機
+    // 昼間・明かりありの場合は消灯待機
     digitalWrite(ledPin, LOW);
  456:	80 e0       	ldi	r24, 0x00	; 0
  458:	3b de       	rcall	.-906    	; 0xd0 <digitalWrite.constprop.1>
